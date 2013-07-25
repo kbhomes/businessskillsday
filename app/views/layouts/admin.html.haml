@@ -1,0 +1,11 @@
+- content_for :before_page do
+  #admin
+    - case current_account
+    - when AdminAccount
+      %i.icon-key
+      You are browsing the administrative area.
+    - when StaffAccount
+      %i.icon-shield
+      You are browsing the staff area.
+
+= render :template => 'layouts/application'

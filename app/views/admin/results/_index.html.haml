@@ -1,0 +1,42 @@
+- if defined?(preview) && preview
+  - shown_results = results.top_five
+  - full_view = false
+  - columns = [:rank, :chapter, :participant, :score]
+- else
+  -shown_results = results
+  - full_view = true
+  - columns = [:rank, :chapter, :participant, :score, :actions]
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_result 'Results:'
+
+    %div
+      - if shown_results.count > 0
+        %table.table
+          %tr
+            %th Rank
+            %th Chapter
+            %th= event.type == 'TeamPerformanceEvent' ? 'Team' : 'Student'
+            %th Score
+            %th
+
+          - shown_results.each do |result|
+            = render :partial => 'results/table_row', :locals => { :result => result, :columns => columns }
+
+        - if results.count > shown_results.count
+          = link_to icon_title_result('View All Results'), admin_event_results_path(event), :class => 'btn btn-mini'
+
+      - else
+        %div.alert.alert-error
+          %i.icon-exclamation
+          This event has no results.
+
+- if full_view
+  .row-fluid
+    .section.span12
+      %div
+        = link_to_new Result, new_admin_event_result_path(event)

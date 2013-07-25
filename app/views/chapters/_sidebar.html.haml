@@ -1,0 +1,27 @@
+%ul.nav.nav-list
+  = sidebar_header 'Chapter', :icon => 'icon-flag'
+  = sidebar_link 'View Information', chapter, :controller => 'chapters', :action => 'show'
+  - if can? :update, chapter
+    = sidebar_link 'Edit Information', edit_chapter_path(chapter), :controller => 'chapters', :action => 'edit'
+  = sidebar_link 'Advisers', chapter_advisers_path(chapter), :controller => 'advisers', :action => ['index', 'new', 'create']
+  = sidebar_link 'Students', chapter_students_path(chapter), :controller => 'students', :action => ['index', 'new', 'create']
+  = sidebar_link 'Teams', chapter_teams_path(chapter), :controller => 'teams', :action => ['index', 'new', 'create']
+  = sidebar_link 'Results', results_chapter_path(chapter), :controller => 'chapters', :action => 'results'
+
+  - if controller_name == 'advisers' && ['index', 'new', 'create'].exclude?(action_name)
+    = sidebar_header 'Adviser', :icon => 'icon-legal'
+    = sidebar_link 'View Information', chapter_adviser_path(chapter, adviser), :controller => 'advisers', :action => 'show'
+    - if can? :update, adviser
+      = sidebar_link 'Edit Information', edit_chapter_adviser_path(chapter, adviser), :controller => 'advisers', :action => ['edit', 'update']
+
+  - if controller_name == 'students' && ['index', 'new', 'create'].exclude?(action_name)
+    = sidebar_header 'Student', :icon => 'icon-user'
+    = sidebar_link 'View Information', chapter_student_path(chapter, student), :controller => 'students', :action => 'show'
+    - if can? :update, student
+      = sidebar_link 'Edit Information', edit_chapter_student_path(chapter, student), :controller => 'students', :action => ['edit', 'update']
+
+  - if controller_name == 'teams' && ['index', 'new', 'create'].exclude?(action_name)
+    = sidebar_header 'Team', :icon => 'icon-group'
+    = sidebar_link 'View Information', chapter_team_path(chapter, team), :controller => 'teams', :action => 'show'
+    - if can? :update, team
+      = sidebar_link 'Edit Information', edit_chapter_team_path(chapter, team), :controller => 'teams', :action => ['edit', 'update']

@@ -1,0 +1,42 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+.row-fluid
+  .span12
+    %h1.title
+      = icon_title_account @admin_account.display_name
+      - if @admin_account.is_a? AdminAccount
+        %small= icon_title 'key', 'Administrator Account'
+      - if @admin_account.is_a? StaffAccount
+        %small= icon_title 'shield', 'Staff Account'
+      - if @admin_account.is_a? ChapterAccount
+        %small= icon_title 'flag', 'Chapter Account'
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_info 'Information:'
+
+    %div
+      %table.info-table
+        %tr
+          %td
+            %strong Email:
+          %td= @admin_account.email
+        - if @admin_account.is_a? ChapterAccount
+          %tr
+            %td
+              %strong Chapter:
+            %td= link_to icon_title_chapter(@admin_account.chapter.name), chapter_path(@admin_account.chapter)
+        %tr
+          %td
+            %strong Created On:
+          %td= @admin_account.created_at.to_s(:human_month_day_year)
+
+.row-fluid
+  .span12.section
+    %div
+      = link_to_edit @admin_account, edit_admin_account_path(@admin_account)
+      = link_to_delete @admin_account, delete_admin_account_path(@admin_account)

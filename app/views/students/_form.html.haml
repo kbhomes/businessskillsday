@@ -1,0 +1,15 @@
+= simple_form_for([@chapter, @student], :html => { :class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :grade, :collection => 9..12
+    = f.association :events,
+                    :as => :events,
+                    :label_method => :to_s,
+                    :collection => Event.where(['type != ?', 'TeamPerformanceEvent'])
+
+    = f.association :team, :collection => @chapter.teams.select { |t| t.can_register_student?(@student) }
+
+  .form-actions
+    = f.button :submit

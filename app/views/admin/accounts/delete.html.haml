@@ -1,0 +1,19 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-remove
+  Deleting account #{@admin_account.display_name}
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Are you sure you want to delete account <strong>#{@admin_account.display_name}</strong>?
+    %div
+      = link_to icon_title_delete,  admin_account_path(@admin_account), :method => :delete, :class => 'btn btn-small btn-danger'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

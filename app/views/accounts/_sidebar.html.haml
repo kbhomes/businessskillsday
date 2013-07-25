@@ -1,0 +1,4 @@
+%ul.nav.nav-list
+  = sidebar_header 'Account', :icon => 'icon-cog'
+  = sidebar_link 'View Information', account_path, :controller => 'account', :action => 'show'
+  = sidebar_link 'Edit Information', edit_account_path, :controller => 'account', :action => 'edit'

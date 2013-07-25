@@ -1,0 +1,8 @@
+%tr
+  %td.team-id= link_to team.id, chapter_team_path(team.chapter, team)
+  %td.team-event-name= link_to event_with_icon(team.event), admin_event_path(team.event)
+  %td.team-chapter= link_to team.chapter.name, chapter_path(team.chapter)
+  %td.team-students= pluralize(team.students.count, 'student')
+  %td
+    = link_to_edit team, edit_chapter_team_path(team.chapter, team)
+    = link_to_delete team, delete_chapter_team_path(team.chapter, team)

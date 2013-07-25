@@ -1,0 +1,8 @@
+%tr
+  %td.event-number= event.number
+  %td.event-name= link_to event_with_icon(event), admin_event_path(event)
+  %td.event-type= event_type(event)
+  %td.event-participants= participants_count(event)
+  %td
+    = link_to_edit event, edit_admin_event_path(event)
+    = link_to_delete event, delete_admin_event_path(event)

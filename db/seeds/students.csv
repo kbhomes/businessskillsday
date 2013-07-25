@@ -1,0 +1,452 @@
+chapter_name,name,grade,event1,event2,event3
+Central,Bertha Alvarado,12,103,104,304
+Central,Cristina Delgado,12,103,104,304
+Central,Raquel Dominguez,12,103,104,304
+Central,Alan Hale,12,105,109,201
+Central,Leonel Hernandez,12,117,108,
+Central,Yazmin Sanchez,12,117,107,
+Central,Isabel Zacarias,12,103,104,304
+Central,Jericot Vargas,11,103,114,
+Central,Cristina Hernandez,12,117,107,
+Central,Gamaliel Suarez,12,103,117,
+Central,Ashley Rhodes,10,111,,201
+Trevor Browne,Amy Herrera,12,114,109,202
+Trevor Browne,Mariah Medina,12,107,114,205
+Trevor Browne,Alfonso Marquez Parra,12,107,118,202
+Trevor Browne,Marisol Fajurdo,12,114,,303
+Trevor Browne,Nicole Gutierrez,10,112,113,303
+Trevor Browne,Nancy Hernandez,12,107,109,303
+Trevor Browne,Homer Gutierrez,12,109,103,201
+Kingman Academy,Taylor Bower,12,102,103,304
+Kingman Academy,Nathan Morgan,12,103,118,301
+Kingman Academy,Nirmal Vijayavel,12,103,117,301
+Kingman Academy,Mason Neal,12,103,104,203
+Kingman Academy,Rikin Patel,11,103,104,302
+Kingman Academy,Allison Lambert,10,112,111,203
+Kingman Academy,Azba Khan,12,104,107,201
+Kingman Academy,Katie Sullivan,12,104,105,304
+Kingman Academy,Mark Williford,11,104,117,303
+Kingman Academy,Sierra Snoddy,11,104,107,201
+Kingman Academy,Dillon Harris,10,106,113,204
+Kingman Academy,Sydney Gray,10,106,112,304
+Kingman Academy,Hala Saadeh,10,106,112,304
+Kingman Academy,Sam Popeil,10,106,109,302
+Kingman Academy,Eddie Knudtson,12,109,114,301
+Kingman Academy,Chris Towne,12,115,118,303
+Kingman Academy,John Stemkowski,12,117,118,303
+Ironwood,Sajid Anwar,11,115,118,302
+Ironwood,Michael Bi,11,109,117,
+Ironwood,Eliza Burke,11,104,117,203
+Ironwood,Shravan Byra,11,115,118,304
+Ironwood,Gabriel Cantu,12,104,118,
+Ironwood,Jason Chen,10,106,111,301
+Ironwood,Todd Cunningham,12,109,115,204
+Ironwood,Nick Ely,12,114,118,204
+Ironwood,Brandon Fletcher,12,109,118,
+Ironwood,Chelsea Fletcher,11,104,116,205
+Ironwood,Victor Garcia,11,103,116,204
+Ironwood,Deven S Govin,10,106,113,
+Ironwood,Patrick Gill,10,116,110,202
+Ironwood,Ben Glines,12,103,109,202
+Ironwood,Caitlin Hale,12,104,109,201
+Ironwood,Kyle Hansen,9,106,111,203
+Ironwood,Renee Harris,12,107,109,201
+Ironwood,Zach Heltzel,12,109,114,201
+Ironwood,Madison Horton,11,104,107,303
+Ironwood,Chia Hsu,10,101,109,301
+Ironwood,Eric Johnson,9,110,112,
+Ironwood,Kan Kawabata,12,103,118,303
+Ironwood,Adam N Kohlhase,10,111,113,
+Ironwood,Long Le,12,108,118,
+Ironwood,Michael Mellody,9,106,113,
+Ironwood,Megan Nunley,11,107,108,205
+Ironwood,Connor Owen,11,115,104,302
+Ironwood,Logan Palmer,12,107,118,203
+Ironwood,Vinay Pankaj,10,111,113,203
+Ironwood,Reema Patel,10,106,112,
+Ironwood,Isela Pierce,10,112,117,
+Ironwood,Dale Ramirez,10,106,113,202
+Ironwood,Nicholas Robinson,9,112,113,205
+Ironwood,Christian Rubert,12,114,118,
+Ironwood,Isha Shah,11,103,104,205
+Ironwood,Taylor Shaw,10,106,111,
+Ironwood,Nathan Schulte,10,114,108,303
+Ironwood,Cejoi Slay,12,104,107,304
+Ironwood,Gregory Snyder,12,109,117,
+Ironwood,Preyanka Govender,11,104,118,
+Ironwood,Rachel Too,9,106,111,
+Ironwood,Luna Tsang,10,106,112,
+Ironwood,Danielle Vanica,12,104,116,304
+Ironwood,Perry Wang,10,106,113,301
+Ironwood,Christopher Wedwick,9,106,111,201
+Ironwood,Kyle Wee,12,109,114,
+Ironwood,Ben Whitely,11,103,104,204
+Ironwood,Megan Wieser,9,106,111,202
+Ironwood,Daniel Wilcox,12,103,118,304
+Ironwood,Josh Williams,12,108,115,
+Ironwood,Jonathan Wilson,12,108,109,
+Ironwood,Whey Jan Chen,11,105,107,302
+Ironwood,William Yoon,10,110,116,
+Ironwood,Alec Cunningham,10,111,113,
+Ironwood,Amy Tsao,12,104,116,
+Ironwood,Mikayla Kvittem-Barr,10,109,111,
+Ironwood,Preyanka Govender,11,109,103,
+Duncan,J.J. Sexton,12,101,117,201
+Duncan,Connor Williams,11,104,118,301
+Duncan,Kailey Sexton,11,115,117,304
+Duncan,Daniel Rendon,11,115,,303
+Duncan,Steven Bigelow,11,101,109,301
+Duncan,Brandon Green,10,108,111,
+Duncan,Doria Rodriquez,10,105,106,
+Duncan,Crystal Hobbs,10,111,112,
+Duncan,Ty Carnes,10,108,111,
+Duncan,David Villala,10,110,113,
+Duncan,Sylvia Corral,11,105,107,302
+Duncan,Selena Bejarano,11,107,109,302
+Duncan,Tessa Wagley,9,110,,202
+Duncan,Ciara Bejarano,9,106,118,
+Duncan,Jasmine Kapkie,9,113,118,
+Duncan,Gracie Babr,12,103,114,
+Duncan,Katelynn Nichols,11,116,,204
+Duncan,Mike Johnson,11,114,,303
+Duncan,MacKenzie Wearne,11,116,,203
+Duncan,Jadyn Sexton,11,104,,303
+Duncan,Tayler Rapier,11,103,,304
+Washington,Oscar Arvizu,12,109,114,203
+Washington,Maimouna Bah,10,110,111,302
+Washington,Mariah Barron,12,104,109,205
+Washington,Jessica Blier,12,105,114,303
+Washington,Lorenzo Carrasco,10,105,117,304
+Washington,Chris Garza,9,111,117,303
+Washington,Elizabeth Garcia,12,102,114,203
+Washington,Fito Garcia,11,107,118,304
+Washington,Ignacia Gurrola,10,101,106,201
+Washington,Sally Lopez,12,104,109,202
+Washington,Jose Navarro,12,101,109,201
+Washington,Jennifer Nguyen,12,104,105,301
+Washington,Victory Quiah,9,101,112,303
+Washington,Perla Saenz,12,101,114,204
+Washington,Clarice Slowtalker,10,109,117,202
+Washington,Angelique Stephens,10,110,112,302
+Washington,Elizabeth Teague,12,104,117,301
+Washington,Rubi Varelas,12,101,114,204
+Washington,Ulises Vazquez,12,103,114,301
+Washington,Gilbert Yazzie,11,107,116,304
+Washington,Danya Sanchez,12,109,117,304
+Washington,Katia Hernandez,12,101,114,
+Pima,Shelby Anger,11,104,116,205
+Pima,Brianna Beus,9,110,111,
+Pima,Kalia Blair,9,106,111,
+Pima,Elizabeth Brooks,10,112,117,
+Pima,Julia Bryce,9,106,112,
+Pima,Alexandra Cory,11,104,105,
+Pima,Olivia Crockett,9,106,112,202
+Pima,Brileigh Darnell,11,104,107,
+Pima,Cameron Edwards,10,112,117,
+Pima,Austin Gann,12,102,118,302
+Pima,Anyssa Gasca,9,111,112,
+Pima,Maddysen Grady,9,111,112,
+Pima,Journey Graver,9,110,111,
+Pima,Shayla Hernandez,11,104,107,
+Pima,Amanda Johnson,10,101,110,
+Pima,Regan Jones,12,105,107,302
+Pima,Lina Kelly,11,104,107,
+Pima,Allen Lunt,9,113,111,
+Pima,Emily Lunt,12,104,107,
+Pima,Natasha Lunt,12,104,105,201
+Pima,Rebecca Lunt,9,106,111,
+Pima,Ana Molinar,12,102,103,302
+Pima,Brittany Peck,10,110,112,
+Pima,Summer Skinner,10,111,113,
+Pima,Traci Skinner,10,101,109,
+Pima,Rebecca Taylor,12,104,114,
+Pima,Emma Thompson,9,106,111,
+Pima,Christopher Walburger,11,105,109,303
+Pima,Nathan Weech,9,112,111,
+Pima,William Ziegler,11,103,109,303
+Benson,Savannah Quiroz,12,118,102,301
+Benson,Emily Brin,12,102,103,303
+Benson,Kjel Gudvangen,12,102,103,301
+Benson,Zack Phillips,12,117,101,304
+Benson,Cody Deeran,11,114,117,304
+Benson,Dustin Ortega-Nowinsky,12,109,117,304
+Benson,Lorraine Farnsworth,12,107,103,
+Benson,Maximilian Flach,11,108,115,301
+Benson,Dillon Dastrup,11,114,117,302
+Benson,Alex Bellmore,11,117,103,
+Benson,Phillip Jansson,11,108,104,302
+Benson,Javonta Light,12,101,103,304
+Benson,Tamara Choate,12,114,101,303
+Benson,Alexandria Ruiz,9,110,111,
+Benson,Dallas Dastrup,9,106,111,
+Benson,Devin Galleano,12,109,104,
+Benson,Michael Trepanier,11,116,101,201
+Benson,Leigha Brown,11,116,,204
+Benson,Kaelin Lockett,10,112,110,202
+Benson,Katie Bryan,9,106,110,203
+Benson,Mollie Wiegand,9,112,110,
+Benson,Somer Opstad,9,111,112,
+Benson,Cheyanne Blaschke,12,103,108,303
+Benson,Kimberly Brogan,11,104,114,302
+Benson,Sean Brogan,9,117,106,
+Payson,Amber Bucanek,12,108,118,
+Payson,John Buskirk,10,103,106,
+Payson,Christain Buskirk,12,115,118,
+Payson,Trey Butler,9,113,111,
+Payson,Nikolas Curi,11,108,115,204
+Payson,Niyal Curi,9,113,111,
+Payson,Savannah Flores,12,117,107,
+Payson,Wesley Goldschmidt,9,113,111,
+Payson,Perla Guereque,12,118,104,
+Payson,Ashley Hoffman,12,104,118,
+Payson,Adam Jacquez,9,113,,203
+Payson,Ty McGinnis-Kennedy,12,108,115,204
+Payson,Sierra McMartin,10,113,104,
+Payson,Dania Morales,12,118,109,
+Payson,Justice Owens,9,111,104,
+Payson,Kayla Percell,9,114,111,
+Payson,Paul Ploughe,9,113,109,
+Payson,Lyndsay Popke,9,113,106,
+Payson,Michael Scott,10,113,112,
+Payson,Rishele Schoults,9,106,113,
+Payson,Anthony Smith,12,115,,203
+Payson,Joshua Wade,9,113,106,
+Payson,Dillon Walker,11,104,115,
+Payson,Jonathan Wisner,9,106,113,
+Peoria,Moriah Cline,12,114,,201
+Peoria,Chelsea Aguilar,12,,0,202
+Peoria,Anthony Franqui,11,108,118,
+Peoria,Taylor Stevens,11,106,,303
+Peoria,Laurel Reisch,11,,0,303
+Peoria,Pricilla ,11,,0,203
+Peoria,RJ Cantu,11,117,111,
+Peoria,Justin Salcido,11,117,106,
+Peoria,Marisa  Leyva,11,112,110,
+Peoria,Jacob Chester,9,106,,202
+Peoria,Latajia Ford,11,111,,0
+Peoria,Hunter Pauletich,11,112,,203
+Peoria,George Perez,11,106,117,
+Peoria,Manuel Diaz,11,117,,0
+Peoria,Genesis Martinez,11,,0,303
+Peoria,Gavin Bauer,11,117,106,
+Peoria,Meg Grose,11,106,,302
+Peoria,Kierra Jackson,11,112,,302
+Peoria,Keishay Coulter,11,,0,302
+Peoria,Anaya Trujillo,11,105,111,
+Peoria,Edita Cermelj,11,111,,301
+Peoria,Javier Vargas,11,111,,202
+Peoria,Sydney Swenson,11,110,106,
+Peoria,Carlos Medina,11,117,107,
+Peoria,Gianna Barone,11,111,,203
+Peoria,Rachael Davis,11,106,111,
+Peoria,Nakeem Lewis,11,105,117,
+Peoria,Dovontae Scott,11,105,117,
+Peoria,Hannah Holzer,11,114,,204
+Peoria,Tyler Porter,11,114,117,
+Peoria,Briana Astaga,11,105,,0
+Peoria,Nicole Schuur,11,114,,301
+Peoria,Kirk Rens,11,103,,201
+Peoria,Megan Johnson,11,104,,201
+Peoria,Taylor Weindel,11,105,104,
+Fairfax,Sara Neese,11,114,117,303
+Fairfax,Aimee Wilson,10,110,111,303
+Fairfax,Neil Patel,11,114,117,303
+Fairfax,Adam Campos,11,118,108,304
+Fairfax,Moses Moore,11,114,118,304
+Fairfax,Joshua Collay,10,106,117,304
+Fairfax,Angela Vega,9,111,112,202
+Fairfax,Ashlyn Forstie,9,111,112,202
+Fairfax,Christina Figueroa,9,111,112,203
+Fairfax,Kinnali Sourathathone,12,101,103,203
+Fairfax,Zhane McMiller,11,105,114,204
+Fairfax,Maryam Abdul-Wahid,11,103,105,304
+Fairfax,Dwight Jackson,10,101,109,204
+Liberty,Justin Petty,10,101,112,304
+Liberty,Amber Bush,9,111,112,303
+Liberty,Tiffany Lam,10,112,114,303
+Liberty,Rachael Davis,9,106,105,
+Liberty,Thomas Prior,9,105,116,205
+Liberty,Kayla Hartman,9,106,114,
+Liberty,Lora Weaver,11,104,109,304
+Liberty,Becca Zeeb,12,109,101,304
+Liberty,Loris Llazani,11,103,117,202
+Liberty,Kyle Olden,11,117,114,202
+Liberty,Caleb Alliger,11,104,107,303
+Liberty,Mark Shaffer,10,109,112,304
+Liberty,Marcus Estrada,10,101,106,201
+Liberty,Quinton Learn,9,111,112,
+Liberty,Andrew Navidi,9,111,112,
+Liberty,Jordan Menzies,9,112,111,
+Liberty,Courtney Donohue,9,112,113,203
+Liberty,Charles Jackson,10,104,107,
+Liberty,Nathan Bannister,11,101,117,302
+Liberty,Stephanie Bohley,12,101,117,
+Liberty,Shaylin Brada,12,101,109,302
+Liberty,Dantrell Eaglin,12,101,109,301
+Liberty,Taylor Gleave,12,101,109,
+Liberty,Brianna Gurley,12,101,114,
+Liberty,Brittney Laduron,9,101,111,
+Liberty,Trevor Landry,12,101,109,
+Liberty,Gabe Lopez,12,101,109,
+Liberty,Aaron Macy,11,101,103,
+Liberty,Marissa Nelson,12,101,107,
+Liberty,Miranda Pacheco,12,101,109,
+Liberty,Kaylee Sumpter,12,101,103,
+Liberty,Cody Wethington,11,101,117,
+Liberty,DJ Marrow,10,101,106,
+Liberty,Jack Larson,10,101,111,
+Coolidge,De'Von Moore,12,118,,201
+Coolidge,De'Janaye Moore,10,113,,204
+Coolidge,Daniela Gomez,12,107,,204
+Coolidge,Marquise Oaks,12,104,114,304
+Coolidge,Jesus Duran,10,117,108,
+Coolidge,Malachi Coberley,12,118,,304
+Coolidge,Danitza Schmitt,10,113,,203
+Coolidge,Amber Conde,9,112,,301
+Coolidge,Kylea de la Rosa,9,112,,301
+Coolidge,Brandon LeBaron,9,106,,301
+Coolidge,Dillon Rippey,9,106,111,
+Coolidge,Gabrielle Velasquez,11,104,,303
+Coolidge,Doug Heiret,12,118,115,
+Coolidge,Chris Pile,9,108,114,201
+Coolidge,Anthony Trevino,9,117,,304
+Coolidge,Magentia Reilly,10,111,,303
+Coolidge,Brady Hannah,10,111,,0
+Mountain View,Michael Andrews,10,105,115,303
+Mountain View,Colton Ballou,12,115,118,204
+Mountain View,Ian Burton,11,114,116,302
+Mountain View,Lexee Celenza,10,106,114,301
+Mountain View,Kevin Ehrichs,11,116,118,304
+Mountain View,Anthony Fichera,11,118,117,202
+Mountain View,Mary Hrdlicka,12,104,109,303
+Mountain View,Jennifer Murdock,10,106,111,203
+Mountain View,Kenneth Murdock,12,116,107,203
+Mountain View,Daphne Ornelas,10,106,112,202
+Mountain View,Priya Patel,10,106,112,304
+Mountain View,Susanna Reyna,10,112,108,301
+Mountain View,Kirstin Salazar,12,116,109,201
+Mountain View,Zuoming Shi,12,103,109,204
+Mountain View,Joshua Weinberg,11,116,117,304
+Mountain View,Alex Wilburn,12,116,104,304
+Mountain View,Greg Wilburn,9,110,116,302
+Mountain View,Tyler Woodruff,9,110,116,302
+Mountain View,Daniel Lopez,11,105,118,301
+Lake Havasu,Dylan McCreary,11,103,101,201
+Lake Havasu,Sabrina Konen,12,118,,202
+Lake Havasu,Jahnnan Patel,11,103,101,203
+Lake Havasu,Autumn Konke,11,103,101,202
+Lake Havasu,Dakota Kroenke,11,,0,201
+Lake Havasu,Brandon Martinez,11,103,101,203
+Centennial,Nura Smadi,11,103,107,302
+Centennial,Curtis Lahaie,12,104,103,302
+Centennial,Kayla Pingerelli,10,111,114,202
+Centennial,Katherine Waltz,11,104,116,
+Centennial,Matthew Quintana,10,106,111,201
+Centennial,Carrie Bi,10,106,112,301
+Centennial,Jackson Paul,10,108,113,203
+Centennial,Ashley Segarra,11,117,109,201
+Centennial,Doug Palmer,12,109,,304
+Centennial,David Zawicki,11,108,118,204
+Centennial,Bailey Riddle,10,117,110,304
+Centennial,Ashleigh Koener,10,111,106,303
+Centennial,Auryan Ratliff,10,113,116,301
+Centennial,Zak Burgess,12,115,,304
+Centennial,Kohlton Bickford,12,115,118,304
+Centennial,William Denison,12,117,,203
+Centennial,Nick Deleon,10,114,112,301
+Centennial,Jess Lackey,10,112,114,303
+Kingman,Danielle laFevers,12,101,114,201
+Kingman,Christina Findley,12,104,103,202
+Kingman,Bradley Gersch,10,101,114,204
+Kingman,Anna Herron,10,104,106,202
+Kingman,Tim Schneider,11,101,104,304
+Kingman,Johnathen Cieszko,12,101,105,203
+Kingman,Mariah Johnson,11,105,114,
+Kingman,Ryen Nelsen,12,108,115,204
+Kingman,Chrystynna Davis,12,103,114,304
+Kingman,Raul Andres,11,101,104,301
+Kingman,Arnold Galvin,11,101,103,301
+Kingman,Cory Franklin,12,118,117,
+Kingman,Trevor Swope,12,109,114,204
+Kingman,Saige Ortiz,11,101,117,304
+Kingman,Isaak Hinson,11,117,118,
+Kingman,Jacob Metz,12,101,109,302
+Kingman,Kayla McLemore,10,106,112,304
+Kingman,Joshua Scurti,12,101,109,201
+Kingman,Catlyn Lovrien,12,107,114,302
+Kingman,Stephen Chapman,12,104,116,
+Kingman,Katie Coyner,12,101,103,302
+Kingman,Shera Saunders,10,111,112,
+Kingman,Naydid Gutierrez,9,110,112,
+Kingman,Nathan Black,9,106,111,
+Kingman,Alex Tisdale,9,112,111,303
+Kingman,Breanna Briggs,9,111,112,303
+Kingman,Kati Shackelford,9,111,112,303
+Kingman,Phillip Ponce,10,101,113,301
+Kingman,Casey Rieb,12,,0,205
+Thatcher,Preston Pursley,12,114,104,
+Thatcher,Skyler Lines,10,114,,202
+Thatcher,Zac Payne,12,118,117,303
+Thatcher,Jaime Gomez,12,107,108,
+Thatcher,Travis Skinner,11,103,118,
+Thatcher,Garrett Hendry,12,107,108,
+Thatcher,Kaylee Griffin,11,104,118,
+Thatcher,Serena Webster,10,113,111,
+Thatcher,Heather Germaine,11,108,115,
+Thatcher,Cassie Little,10,104,108,
+Thatcher,Justin Dahl,11,101,108,
+Thatcher,Garrett Rupp,12,104,107,303
+Thatcher,Alyssa Chavez,11,117,118,
+Thatcher,Heather Leaman,11,116,,204
+Thatcher,McKenzi Despain,11,107,108,
+Thatcher,Josh Woods,11,117,118,
+Thatcher,Michael Ziccarelli,11,103,104,303
+Thatcher,Kadi Vanderbloem,11,103,117,
+Thatcher,Steven Lines,12,103,107,
+Thatcher,Linus Lindqvist,11,107,109,
+Thatcher,Levi Hughes,11,118,108,
+Thatcher,Tiana Roebuck,10,111,112,
+Millennium,Dani Beeler,11,104,,201
+Millennium,Paige Sandstrom,11,104,,201
+Millennium,Lexie Forkner,11,107,109,301
+Millennium,Sarah Baleanu,11,109,114,301
+Millennium,Daniel Mass,12,105,,304
+Millennium,Alex Rodriguez,12,107,,203
+Millennium,Rhiannon Polak,12,117,,204
+Millennium,Erik Rios,12,116,,202
+Millennium,Jon Zia,11,118,,203
+Millennium,AJ Torre,11,101,,304
+Millennium,Kyle Crosner,12,105,,202
+Millennium,Will Duplex,11,109,,304
+Millennium,Mark Sellers,12,101,,304
+Millennium,Crissy Whiles,12,105,111,
+Millennium,Kevin Ngo,12,,0,303
+Millennium,Kendall Bonney,12,,0,303
+Sedona Red Rock,Abby Parella,11,103,117,
+Sedona Red Rock,Tyler Hollmann,12,103,117,
+Sedona Red Rock,John Beeler,12,104,118,203
+Sedona Red Rock,Jade West,9,112,114,303
+Sedona Red Rock,Chas Mangarpan,12,104,108,
+Sedona Red Rock,Wade Adams,10,106,113,
+Sedona Red Rock,Mason Aronson,10,106,114,
+Sedona Red Rock,Dylan George-Sills,12,103,117,304
+Sedona Red Rock,Savannah Cord,12,107,118,
+Sedona Red Rock,Scotty Thompson,12,109,114,304
+Sedona Red Rock,Amber Rippy,9,106,111,
+Sedona Red Rock,Yvette Schlee,9,106,111,
+Sedona Red Rock,Catrina Lee-Wilkins,11,115,105,
+Sedona Red Rock,Jon Bottarini,11,109,117,304
+Sedona Red Rock,Gavyn Tanner,9,106,111,
+Raymond S. Kellis,Flabio Madera,10,116,113,304
+Raymond S. Kellis,Yardley Rivera,10,113,106,304
+Raymond S. Kellis,Jasmin Mercado,12,114,104,
+Raymond S. Kellis,D.J. Hall,10,113,,203
+Raymond S. Kellis,Meghann Topilko,10,108,,0
+Raymond S. Kellis,Rebecca Smith,10,112,114,203
+Raymond S. Kellis,Jessica Gardena,11,114,,303
+Raymond S. Kellis,Jennifer Martinez,10,114,,303
+Raymond S. Kellis,Jordan Clowes,10,106,117,204
+Raymond S. Kellis,Brian Madera,9,111,116,304
+Raymond S. Kellis,Adele Karabegovic,10,106,116,304
+Raymond S. Kellis,Navkaran Singh,12,104,117,204
+Raymond S. Kellis,Kaylee Barker,12,107,,201

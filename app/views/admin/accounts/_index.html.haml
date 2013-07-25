@@ -1,0 +1,87 @@
+- admin_accounts = accounts.where(:type => 'AdminAccount')
+- staff_accounts = accounts.where(:type => 'StaffAccount')
+- chapter_accounts = accounts.where(:type => 'ChapterAccount')
+
+- if !defined?(show_all)
+  - show_all = true
+- show_max = 5
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_account 'Accounts:'
+
+    %div.section
+      %h5.title= icon_title 'key', 'Administrator accounts:'
+
+      %div
+        %p.muted= icon_title_info "There are #{pluralize admin_accounts.count, 'registered administrator account'}."
+
+        %table.table
+          %th Email
+          %th Created On
+          %th
+
+          - if !show_all
+            - admin_accounts.limit(show_max).each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+          - else
+            - admin_accounts.each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+
+        - if show_all
+          = will_paginate admin_accounts
+        - if !show_all && admin_accounts.count > show_max
+          = link_to 'View all accounts', admin_accounts_path, :class => 'btn btn-mini'
+
+    %div.section
+      %h5.title= icon_title 'shield', 'Staff accounts:'
+
+      %div
+        %p.muted= icon_title_info "There are #{pluralize staff_accounts.count, 'registered staff account'}."
+
+        %table.table
+          %th Email
+          %th Created On
+          %th
+
+          - if !show_all
+            - staff_accounts.limit(show_max).each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+          - else
+            - staff_accounts.each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+
+        - if show_all
+          = will_paginate staff_accounts
+        - if !show_all && staff_accounts.count > show_max
+          = link_to 'View all accounts', admin_accounts_path, :class => 'btn btn-mini'
+
+    %div.section
+      %h5.title= icon_title_chapter 'Chapter accounts:'
+
+      %div
+        %p.muted= icon_title_info "There are #{pluralize chapter_accounts.count, 'registered chapter account'}."
+
+        %table.table
+          %th Email
+          %th Chapter
+          %th Created On
+          %th
+
+          - if !show_all
+            - chapter_accounts.limit(show_max).each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+          - else
+            - chapter_accounts.each do |a|
+              = render :partial => 'admin/accounts/table_row', :locals => { :account => a }
+
+        - if show_all
+          = will_paginate chapter_accounts
+        - if !show_all && chapter_accounts.count > show_max
+          = link_to 'View all accounts', admin_accounts_path, :class => 'btn btn-mini'
+
+    %div
+      = link_to_new Account, new_admin_account_path

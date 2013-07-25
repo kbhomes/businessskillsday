@@ -1,0 +1,10 @@
+- content_for :sidebar do
+  = render :partial => 'sidebar', :locals => { :account => @account }
+
+.row-fluid
+  .span12
+    %h1= icon_title_edit "Editing your account, #{@account.display_name}"
+
+.row-fluid
+  .span12
+    = render :partial => 'form'

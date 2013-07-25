@@ -1,0 +1,38 @@
+- if !defined?(show_all)
+  - show_all = true
+- show_max = 5
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_adviser 'Advisers:'
+
+    %div
+      - if advisers.count > 0
+        %p.muted= icon_title_info "There are #{pluralize advisers.count, 'registered adviser'}."
+
+        %table.table
+          %th ID
+          %th Name
+          %th Chapter
+          %th
+
+          - if !show_all
+            - advisers.limit(show_max).each do |a|
+              = render :partial => 'admin/advisers/table_row', :locals => { :adviser => a }
+          - else
+            - advisers.each do |a|
+              = render :partial => 'admin/advisers/table_row', :locals => { :adviser => a }
+
+        - if show_all
+          = will_paginate advisers
+        - if !show_all && advisers.count > show_max
+          = link_to 'View all advisers', admin_advisers_path, :class => 'btn btn-mini'
+
+      - else
+        %div.alert.alert-error= icon_title_exclamation 'There are no registered advisers.'
+
+    %div
+      = link_to_new Adviser, new_admin_adviser_path

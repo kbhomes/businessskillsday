@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+    %meta{ :content => 'text/html', 'http-equiv' => 'Content-Type' }
+  %body
+    %h4 A Business Skills Day 25 account has been created for you.
+
+    - if @account.is_a? AdminAccount
+      :markdown
+        This administrator account will be able to manage the chapters, advisers, students, teams, events and
+        accounts in the system.
+
+        Your account details:
+
+        * __Email__: #{@account.email}
+        * __Password__: #{@password}
+
+        To log in, visit [this link][login].
+
+        [login]: #{login_url}
+
+    - if @account.is_a? StaffAccount
+      :markdown
+        This staff account will be able to view the chapters, advisers, students, teams, events and
+        manage event results in the system.
+
+        Your account details:
+
+        * __Email__: #{@account.email}
+        * __Password__: #{@password}
+
+        To log in, visit [this link][login].
+
+        [login]: #{login_url}
+
+    - if @account.is_a? ChapterAccount
+      :markdown
+        This account has been created for your chapter, __#{@account.chapter.name}__. It will be able
+        to manage the advisers, students, teams, and event registration for your chapter.
+
+        Your account details:
+
+        * __Email__: #{@account.email}
+        * __Password__: #{@password}
+
+        To log in, visit [this link][login].
+
+        [login]: #{login_url}
+

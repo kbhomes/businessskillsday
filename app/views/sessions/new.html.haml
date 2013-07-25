@@ -1,0 +1,33 @@
+.container
+  .row
+    .spacer-medium
+
+  .row
+    .span6.offset3
+      .row
+        %h1= icon_title 'signin', 'Login'
+
+      - if flash[:error].present?
+        .row
+          %p#notice.alert.alert-error= icon_title 'remove', flash[:error]
+
+      - if notice.present?
+        .row
+          %p#notice.alert.alert-success= icon_title 'ok', notice
+
+      .row
+        = simple_form_for :login, :html => { :class => 'form form-horizontal' } do |f|
+          = f.error_notification
+
+          .form-inputs
+            = f.input :email, :required => false
+            = f.input :password, :required => false
+
+            = f.input :remember_me, :as => :boolean, :wrapper => :inline_checkbox, :label => 'Remember me?'
+
+          .form-actions.plain
+            = f.button :submit, 'Login'
+
+
+  .row
+    .spacer-small

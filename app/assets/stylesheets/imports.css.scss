@@ -1,0 +1,40 @@
+@import "asu_colors.css.scss";
+
+$linkColor: $asu-maroon;
+$inputBorderRadius: 2px;
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+.btn {
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-image: none;
+  box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: museo-slab, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h1, .h1 { font-size: 38px; }
+h2, .h2 { font-size: 32px; }
+h3, .h3 { font-size: 24px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 14px; }
+h6, .h6 { font-size: 12px }
+
+.nav-header {
+  font-family: museo-slab, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@import "font-awesome";
+
+i[class^="icon-"], i[class*=" icon-"] {
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+}

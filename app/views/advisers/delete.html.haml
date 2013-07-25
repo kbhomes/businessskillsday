@@ -1,0 +1,20 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :adviser => @adviser }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-remove
+  Deleting adviser #{@adviser.name}
+  %small= link_to "[#{@chapter.name}]", chapter_path(@chapter)
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Are you sure you want to delete adviser <strong>#{@adviser.name}</strong>?
+    %div
+      = link_to icon_title_delete,  chapter_adviser_path(@chapter, @adviser), :method => :delete, :class => 'btn btn-small btn-danger'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

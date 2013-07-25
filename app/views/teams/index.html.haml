@@ -1,0 +1,13 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+- content_for :section_header do
+  %h1
+    %i.icon-group
+    Teams for
+    = link_to "#{@chapter.name}", chapter_path(@chapter)
+
+= render :partial => 'index', :locals => { :teams => @teams, :section_header => content_for(:section_header) }

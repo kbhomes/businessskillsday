@@ -1,0 +1,73 @@
+!!!
+%html
+  %head
+    %title Business Skills Day 25
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    -#- if current_account
+    #header
+      #session-header
+        = render 'sessions/header'
+
+    #main-image
+      .container
+        .row
+          .span12
+            = image_tag 'bsd/fde_gold.png'
+
+    #details
+      .container
+        .row
+          #where.information.span6
+            %div
+              %i.icon-map-marker
+
+            %div
+              %span.title Memorial Union
+              %span.subtitle Arizona State University
+
+            .info
+              = link_to 'http://goo.gl/maps/hVKdl' do
+                %address
+                  301 E. Orange Mall
+                  %br/
+                  Tempe, AZ 85281
+
+          #when.information.span6
+            %div
+              %i.icon-time
+
+            %span.title December 6, 2013
+
+    #advisers
+      .container
+        .row
+          .span12
+            #register.information
+              %i.icon-plus
+              .title Registration
+        .row
+          .span4.offset4
+            .alert.alert-error
+              %i.icon-time
+              Registration will open <strong>October 2013</strong>.
+
+    #footer
+      .container
+        .row
+          .offset3.span3.text-right
+            Copyright &copy; 2013 Arizona State University Phi Beta Lambda. All rights reserved.
+          .span3.text-left
+            %ul#contacts
+              %li
+                %i.icon-envelope-alt
+                = link_to 'info@asupbl.org', 'mailto:info@asupbl.org'
+              %li
+                %i.icon-facebook-sign
+                = link_to '/asubsd', 'https://www.facebook.com/asubsd'
+              %li
+                %i.icon-twitter-sign
+                = link_to '@asupbl', 'http://www.twitter.com/asupbl'

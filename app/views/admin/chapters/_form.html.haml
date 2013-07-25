@@ -1,0 +1,15 @@
+= simple_form_for(@admin_chapter, :as => :admin_chapter, :url => admin_chapter_path(@admin_chapter), :html => { :class => 'form form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :contact, :label => 'Contact Person'
+    = f.input :email
+    %hr
+    = f.input :address
+    = f.input :city
+    = f.input :state, :collection => us_states
+    = f.input :zip
+
+  .form-actions
+    = f.button :submit

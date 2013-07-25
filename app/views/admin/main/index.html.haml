@@ -1,0 +1,40 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if flash[:error].present?
+  %p#notice.alert.alert-error= icon_title 'remove', flash[:error]
+
+.row-fluid
+  .span12
+    %h1
+      - case current_account
+      - when AdminAccount
+        %i.icon-key
+        Administrative Dashboard
+      - when StaffAccount
+        %i.icon-shield
+        Staff Dashboard
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/chapters/index', :locals => { :chapters => @admin_chapters, :show_all => false }
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/advisers/index', :locals => { :advisers => @admin_advisers, :show_all => false }
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/students/index', :locals => { :students => @admin_students, :show_all => false }
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/teams/index', :locals => { :teams => @admin_teams, :show_all => false }
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/events/index', :locals => { :events => @admin_events, :show_all => false }
+
+.row-fluid
+  .span12
+    = render :partial => 'admin/accounts/index', :locals => { :accounts => @admin_accounts, :show_all => false }

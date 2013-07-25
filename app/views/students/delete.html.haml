@@ -1,0 +1,27 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :student => @student }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-remove
+  Deleting student #{@student.name}
+  %small= link_to "[#{@chapter.name}]", chapter_path(@chapter)
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Are you sure you want to delete student <strong>#{@student.name}</strong>?
+      %p Doing so will trigger the following actions:
+      %ul
+        - @student.events.each do |e|
+          %li Student will be removed from event #{event_with_icon(e)}
+        - if @student.team.present?
+          %li Student will be removed from team #{@student.team}
+
+    %div
+      = link_to icon_title_delete,  chapter_student_path(@chapter, @student), :method => :delete, :class => 'btn btn-small btn-danger'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

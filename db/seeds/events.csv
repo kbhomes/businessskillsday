@@ -1,0 +1,28 @@
+number,name,nine_ten,type
+101,Accounting I,false,WrittenEvent
+102,Accounting II,false,WrittenEvent
+103,Business Calculations,false,WrittenEvent
+104,Business Communication,false,WrittenEvent
+105,Business Law,false,WrittenEvent
+106,Business Math,true,WrittenEvent
+107,Business Procedures,false,WrittenEvent
+108,Cyber Security,false,WrittenEvent
+109,Economics,false,WrittenEvent
+110,FBLA Principles and Procedures,true,WrittenEvent
+111,Intro to Business,true,WrittenEvent
+112,Intro to Business Communications,true,WrittenEvent
+113,Intro to Tech Concepts,true,WrittenEvent
+114,Marketing,false,WrittenEvent
+115,Networking Concepts,false,WrittenEvent
+116,Parliamentary Procedures,false,WrittenEvent
+117,Sports Management,false,WrittenEvent
+118,Technology Concepts,false,WrittenEvent
+201,Job Interview,false,IndividualPerformanceEvent
+202,Public Speaking,false,IndividualPerformanceEvent
+203,Impromptu Speaking,false,IndividualPerformanceEvent
+204,Help Desk,false,IndividualPerformanceEvent
+205,Future Business Leader,false,IndividualPerformanceEvent
+301,Entrepreneurship,false,TeamPerformanceEvent
+302,Management Decision Making,false,TeamPerformanceEvent
+303,Business Graphics,false,TeamPerformanceEvent
+304,Business Jeopardy,false,TeamPerformanceEvent

@@ -1,0 +1,29 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-remove
+  Deleting chapter #{@admin_chapter.name}
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Are you sure you want to delete chapter <strong>#{@admin_chapter.name}</strong>?
+      - if @admin_chapter.advisers.any? || @admin_chapter.students.any? || @admin_chapter.teams.any?
+        %p Doing so will trigger the following actions:
+        %ul
+          - if @admin_chapter.advisers.any?
+            %li Delete #{pluralize(@admin_chapter.advisers.count, 'adviser')} from this chapter
+          - if @admin_chapter.students.any?
+            %li Delete #{pluralize(@admin_chapter.students.count, 'student')} from this chapter
+          - if @admin_chapter.teams.any?
+            %li Delete #{pluralize(@admin_chapter.teams.count, 'team')} from this chapter
+
+    %div
+      = link_to icon_title_delete, admin_chapter_path(@admin_chapter), :method => :delete, :class => 'btn btn-small btn-danger'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

@@ -1,0 +1,16 @@
+A Business Skills Day 25 account has been created for you.
+
+<% if @account.is_a? AdminAccount %>
+This administrator account will be able to manage the chapters, advisers, students, teams, events and accounts in the system.
+<% elsif @account.is_a? StaffAccount %>
+This staff account will be able to view the chapters, advisers, students, teams, events and manage event results in the system.
+<% elsif @account.is_a? ChapterAccount %>
+This account has been created for your chapter, <%= @account.chapter.name %>. It will be able to manage the advisers, students, teams, and event registration for your chapter.
+<% end %>
+
+Your account details:
+
+Email: <%= @account.email %>
+Password: <%= @password %>
+
+To log in, visit this link: <%= login_url %>

@@ -1,0 +1,27 @@
+- if current_account
+  .dropdown
+    = link_to post_login_url(current_account), :class => 'light' do
+
+      - case current_account
+      - when ChapterAccount
+        %i.icon-flag
+      - when StaffAccount
+        %i.icon-shield
+      - when AdminAccount
+        %i.icon-key
+
+      = current_account.display_name
+
+    %ul.dropdown-menu
+      %li
+        = link_to current_account.type.underscore.humanize.split(' ').first, post_login_url(current_account)
+        = link_to 'Account', account_path
+
+  = link_to logout_path do
+    %i.icon-signout
+    Logout
+
+- else
+  = link_to login_path do
+    %i.icon-signin
+    Login

@@ -1,0 +1,28 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-remove
+  Deleting #{@admin_event.type.underscore.humanize.downcase} #{@admin_event.name}
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Are you sure you want to delete #{@admin_event.type.underscore.humanize.downcase} <strong>#{@admin_event.name}</strong>?
+      %p Doing so will trigger the following actions:
+      %ul
+        - case @admin_event.type
+        - when 'TeamPerformanceEvent'
+          - @admin_event.participants.each do |t|
+            %li Delete team for chapter #{link_to t.chapter.name, chapter_path(t.chapter)}
+        - else
+          %li Remove this event from #{pluralize(@admin_event.participants.count, 'student')}
+
+    %div
+      = link_to icon_title_delete,  admin_event_path(@admin_event), :method => :delete, :class => 'btn btn-small btn-danger'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

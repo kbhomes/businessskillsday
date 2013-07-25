@@ -1,0 +1,35 @@
+/* Museo Slab 500 */
+/* A font by Jos Buivenga (exljbris) -> http://www.exljbris.com */
+@font-face {
+  font-family: 'museo-slab';
+
+  src: font-url('museo-slab.eot');
+  src: font-url('museo-slab.eot?#iefix') format('embedded-opentype'),
+       font-url('museo-slab.woff') format('woff'),
+       font-url('museo-slab.ttf') format('truetype')
+       font-url('museo-slab.svg#wf') format('svg');
+}
+
+@font-face {
+  font-family: 'museo-slab';
+  font-style: italic;
+
+  src: font-url('museo-slab-italic.eot');
+  src: font-url('museo-slab-italic.eot?#iefix') format('embedded-opentype'),
+       font-url('museo-slab-italic.woff') format('woff'),
+       font-url('museo-slab-italic.ttf') format('truetype')
+       font-url('museo-slab-italic.svg#wf') format('svg');
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'museo-slab';
+    src: font-url('museo-slab.svg#wf') format('svg');
+  }
+
+  @font-face {
+    font-family: 'museo-slab';
+    font-style: italic;
+    src: font-url('museo-slab-italic.svg#wf') format('svg');
+  }
+}

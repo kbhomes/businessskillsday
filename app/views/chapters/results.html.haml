@@ -1,0 +1,38 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+.row-fluid
+  .section.span12
+    %h1
+      %i.icon-trophy
+      Results for
+      = link_to "#{@chapter.name}", chapter_path(@chapter)
+
+    - if @student_results.count > 0
+      %div
+        %h5.title= icon_title_student 'Students:'
+        %div
+          %table.table
+            %tr
+              %th Rank
+              %th Event
+              %th Participant
+              %th Score
+            - @student_results.each do |r|
+              = render :partial => 'results/table_row', :locals => { :result => r, :columns => [:rank, :event, :participant, :score] }
+
+    - if @team_results.count > 0
+      %div
+        %h5.title= icon_title_team 'Teams:'
+        %div
+          %table.table
+            %tr
+              %th Rank
+              %th Event
+              %th Participants
+              %th Score
+            - @team_results.each do |r|
+              = render :partial => 'results/table_row', :locals => { :result => r, :columns => [:rank, :event, :participant, :score] }

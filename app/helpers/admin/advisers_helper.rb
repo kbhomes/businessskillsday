@@ -1,0 +1,2 @@
+module Admin::AdvisersHelper
+end

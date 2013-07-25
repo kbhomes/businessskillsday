@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %title Business Skills Day
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    :coffee
+      $ ->
+        try
+          responder = new BSD.#{controller_path.classify.gsub(/::/,'.')} || new BSD.Responder;
+          action = "#{action_name}"
+          responder[action]?()
+        catch error
+
+  %body
+
+    #header
+      = link_to root_path do
+        #logo
+
+      - if Rails.env.staging?
+        %span.staging Staging
+      - if Rails.env.development?
+        %span.development Development
+
+      #session-header
+        = render 'sessions/header'
+
+    = yield :before_page
+
+    - if content_for? :sidebar
+      #page.container-fluid
+        .row-fluid
+          #sidebar.span2
+            = yield :sidebar
+
+          #content.span10
+            = content_for?(:content) ? yield(:content) : yield
+
+    - else
+      = content_for?(:content) ? yield(:content) : yield
+
+    #footer
+      .container
+        .row
+          .offset3.span3.text-right
+            Copyright &copy; 2013 Arizona State University Phi Beta Lambda. All rights reserved.
+          .span3.text-left
+            %ul#contacts
+              %li
+                %i.icon-envelope
+                = link_to 'info@asupbl.org', 'mailto:info@asupbl.org'
+              %li
+                %i.icon-facebook-sign
+                = link_to '/asubsd', 'https://www.facebook.com/asubsd'
+              %li
+                %i.icon-twitter-sign
+                = link_to '@asupbl', 'http://www.twitter.com/asupbl'

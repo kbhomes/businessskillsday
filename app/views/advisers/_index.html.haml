@@ -1,0 +1,30 @@
+.row-fluid
+  .section.span12
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_adviser 'Advisers:'
+
+    %div
+      - if advisers.count > 0
+        %p.muted
+          %i.icon-info
+          You have #{pluralize advisers.count, 'registered adviser'}.
+          - if can? :create, Adviser
+            = link_to 'Add another?', new_chapter_adviser_path(@chapter)
+
+        %table.table
+          %th Name
+          %th
+
+          - advisers.each do |a|
+            = render :partial => 'advisers/table_row', :locals => { :adviser => a }
+
+        = will_paginate advisers
+
+      - else
+        %div.alert.alert-error
+          %i.icon-exclamation
+          You have no registered advisers.
+          - if can? :create, Adviser
+            = link_to 'Add one.', new_chapter_adviser_path(@chapter)

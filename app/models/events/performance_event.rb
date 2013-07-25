@@ -1,0 +1,3 @@
+class PerformanceEvent < Event
+
+end

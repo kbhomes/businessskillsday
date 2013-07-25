@@ -1,0 +1,29 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :student => @student }
+
+.row-fluid
+  .span12
+    %h1= icon_title_edit "Editing information for #{@student.name}"
+
+.row-fluid.form-split
+  .span7.form-main
+    = render 'form'
+
+  .span5.form-side-information.section
+    :markdown
+      <h4 class="title"><i class="icon-exclamation-sign"></i> Registration Information</h4>
+
+      There are certain limitations on what events a student may register for:</span>
+
+      *   Students may register for at most 3 events
+      <span style="display:none;">*   Students may register for at most 3 written events</span>
+      *   Students may register for at most 1 performance (individual or team) event
+      *   Only students in grades 9 or 10 may register for an event marked as 9 - 10
+
+      There are further limitations based on the size of your chapter:
+
+      *   Chapters with **between 0 and 24 students** may register at most **2 students** for a particular individual performance event
+      *   Chapters with **between 25 and 49 students** may register at most **3 students** for a particular individual performance event
+      *   Chapters with **50 or more students** may register at most **4** students for a particular individual performance event
+
+      You currently have **#{pluralize(@chapter.students.count, 'student')}** in your chapter.

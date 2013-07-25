@@ -1,0 +1,10 @@
+- content_for :sidebar do
+  = render :partial => 'sidebar', :locals => { :chapter => @chapter }
+
+.row-fluid
+  .span12
+    %h1= icon_title_edit "Editing information for #{@chapter.name}"
+
+.row-fluid
+  .span12
+    = render 'form'

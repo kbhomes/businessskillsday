@@ -1,0 +1,9 @@
+%tr
+  %td.chapter-id= chapter.id
+  %td.chapter-name= link_to chapter.name, chapter_path(chapter)
+  %td.chapter-advisers-count= pluralize(chapter.advisers.count, 'adviser')
+  %td.chapter-students-count= pluralize(chapter.students.count, 'student')
+  %td.chapter-teams-count= pluralize(chapter.teams.count, 'team')
+  %td
+    = link_to_edit chapter, edit_chapter_path(chapter)
+    = link_to_delete chapter, delete_admin_chapter_path(chapter)

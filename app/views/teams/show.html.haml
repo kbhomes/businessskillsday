@@ -1,0 +1,52 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :team => @team }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-group
+  Team for #{@team.event.name}
+  %small= link_to "[#{@chapter.name}]", chapter_path(@chapter)
+
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_info 'Information:'
+
+    %div
+      %table.info-table
+        %tr
+          %td
+            %strong ID:
+          %td= @team.id
+        %tr
+          %td
+            %strong Event:
+          %td= event_with_icon(@team.event)
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_student 'Members:'
+
+    %div
+      %table.table
+        %tr
+          %th ID
+          %th Name
+          %th Grade
+
+        - @team.students.each do |student|
+          %tr
+            %td.student-id= student.id
+            %td.student-name= link_to student.name, chapter_student_path(student.chapter, student)
+            %td.student-grade= student.grade
+
+- if @team.result.present?
+  .row-fluid
+    .section.span12
+      %h4.title= icon_title_result 'Result:'
+
+      %div
+        %table.table.results
+          = render :partial => 'results/table_row', :locals => { :result => @team.result }

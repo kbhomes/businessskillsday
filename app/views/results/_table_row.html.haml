@@ -1,0 +1,30 @@
+- unless defined? columns
+  - columns = [:rank, :event, :participant, :score]
+  
+%tr
+  - columns.each do |column|
+    - if column == :rank
+      %td.result-rank
+        - if result.rank.present?
+          = "#{result.rank.ordinalize} place"
+
+    - if column == :event
+      %td.result-event= event_with_icon(result.event)
+
+    - if column == :chapter
+      %td.result-chapter= link_to result.participant.chapter.name, chapter_path(result.participant.chapter)
+
+    - if column == :participant  
+      - case result
+      - when StudentResult
+        %td.result-participant= link_to result.participant.name, chapter_student_path(result.participant.chapter, result.participant)  
+      - when TeamResult
+        %td.result-participant= result.participant.students.map { |s| link_to s.name, chapter_student_path(s.chapter, s) }.to_sentence.html_safe
+
+    - if column == :score
+      %td.result-score= result.score
+
+    - if column == :actions
+      %td.result-actions
+        = link_to_edit result, edit_admin_event_result_path(result.event, result)
+        = link_to_delete result, delete_admin_event_result_path(result.event, result)

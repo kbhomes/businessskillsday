@@ -1,0 +1,38 @@
+- if !defined?(show_all)
+  - show_all = true
+- show_max = 5
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_student 'Students:'
+
+    %div
+      - if students.count > 0
+        %p.muted= icon_title_info "There are #{pluralize students.count, 'registered student'}."
+
+        %table.table
+          %th ID
+          %th Name
+          %th Chapter
+          %th
+
+          - if !show_all
+            - students.limit(show_max).each do |s|
+              = render :partial => 'admin/students/table_row', :locals => { :student => s }
+          - else
+            - students.each do |s|
+              = render :partial => 'admin/students/table_row', :locals => { :student => s }
+
+        - if show_all
+          = will_paginate students
+        - if !show_all && students.count > show_max
+          = link_to 'View all students', admin_students_path, :class => 'btn btn-mini'
+
+      - else
+        %div.alert.alert-error= icon_title_exclamation 'There are no registered students.'
+
+    %div
+      = link_to_new Student, new_admin_student_path

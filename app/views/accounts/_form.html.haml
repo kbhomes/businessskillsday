@@ -1,0 +1,21 @@
+= simple_form_for(@account, :as => :account, :url => account_path, :html => { :class => 'form form-horizontal' }) do |f|
+  = f.error_notification
+
+  - if @account.new_record?
+    .alert.alert-info= icon_title_info 'A password will be generated and account details will be sent to the email address entered.'
+
+  .form-inputs
+    = f.input :email
+
+    %hr
+    %div.controls
+      %p.muted
+        %i.icon-info-sign
+        The following fields only need to be entered if you are changing passwords.
+
+    = f.input :current_password, :as => :password
+    = f.input :password, :label => 'New password'
+    = f.input :password_confirmation
+
+  .form-actions
+    = f.button :submit, 'Save Account'

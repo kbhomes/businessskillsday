@@ -1,0 +1,33 @@
+.row-fluid
+  .section.span12
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_student 'Students:'
+
+    %div
+      - if students.count > 0
+        %p.muted
+          %i.icon-info
+          You have #{pluralize students.count, 'registered student'}.
+          - if can? :create, Student
+            = link_to 'Add another?', new_chapter_student_path(@chapter)
+
+        %table.table
+          %th ID
+          %th Name
+          %th Grade
+          %th Events
+          %th
+
+          - students.each do |s|
+            = render :partial => 'students/table_row', :locals => { :student => s }
+
+        = will_paginate students
+
+      - else
+        %div.alert.alert-error
+          %i.icon-exclamation
+          You have no registered students.
+          - if can? :create, Student
+            = link_to 'Add one.', new_chapter_student_path(@chapter)

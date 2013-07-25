@@ -1,0 +1,16 @@
+= simple_form_for(@result, :as => :result, :url => admin_event_result_path(@event, @result), :html => { :class => 'form form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :score, :as => :integer
+
+    - if @event.is_a? TeamPerformanceEvent
+      = f.association :participant, :as => :select, :collection => @event.participants, :label => 'Team', :label_method => ->(team){ team.chapter.name }
+    - else
+      = f.association :participant, :as => :select, :collection => @event.participants, :label => 'Student'
+
+
+
+  .form-actions
+    = f.button :submit, 'Save Result'
+    = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn'

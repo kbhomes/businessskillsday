@@ -1,0 +1,7 @@
+%tr
+  %td.adviser-id= adviser.id
+  %td.adviser-name= link_to adviser.name, chapter_adviser_path(adviser.chapter, adviser)
+  %td.adviser-chapter= link_to adviser.chapter.name, chapter_path(adviser.chapter)
+  %td
+    = link_to_edit adviser, edit_chapter_adviser_path(adviser.chapter, adviser)
+    = link_to_delete adviser, delete_chapter_adviser_path(adviser.chapter, adviser)

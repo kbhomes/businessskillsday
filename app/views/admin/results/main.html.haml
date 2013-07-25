@@ -1,0 +1,22 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1= icon_title_result "Results"
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_event 'Events:'
+    %div
+      %table.table
+        %tr
+          %th Number
+          %th Name
+          %th Type
+          %th Results
+          %th
+
+        - @events.each do |ev|
+          = render :partial => 'admin/events/results_table_row', :locals => { :event => ev }

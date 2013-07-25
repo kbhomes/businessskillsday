@@ -1,0 +1,40 @@
+- if !defined?(show_all)
+  - show_all = true
+- show_max = 5
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_chapter 'Chapters:'
+
+    %div
+      - if chapters.count > 0
+        %p.muted= icon_title_info "There are #{pluralize chapters.count, 'registered chapter'}."
+
+        %table.table
+          %th ID
+          %th Name
+          %th Advisers
+          %th Students
+          %th Teams
+          %th
+
+          - if !show_all
+            - chapters.limit(show_max).each do |c|
+              = render :partial => 'admin/chapters/table_row', :locals => { :chapter => c }
+          - else
+            - chapters.each do |c|
+              = render :partial => 'admin/chapters/table_row', :locals => { :chapter => c }
+
+        - if show_all
+          = will_paginate chapters
+        - if !show_all && chapters.count > show_max
+          = link_to 'View all chapters', admin_chapters_path, :class => 'btn btn-mini'
+
+      - else
+        %div.alert.alert-error= icon_title_exclamation 'There are no registered chapters.'
+
+    %div
+      = link_to_new Chapter, new_admin_chapter_path

@@ -1,0 +1,61 @@
+form {
+  .control-label {
+    font-weight: bold;
+
+    &:after {
+      content: ':';
+    }
+  }
+
+  input.disabled, input[disabled] {
+    outline: none;
+    border:  none;
+    background: none;
+    box-shadow: none;
+    cursor: default;
+  }
+
+  abbr[title] {
+    color: red;
+    border-bottom: none;
+  }
+
+  .help-block, form.help-inline {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+  }
+
+  .checkbox-inline .control-label {
+    text-align: left;
+
+    &:after {
+      content: '';
+    }
+  }
+
+  .form-actions {
+    background: none;
+
+    &.plain {
+      border: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+.form-split {
+  background-color: whitesmoke;
+
+  .form-main {
+    border-right: 1px solid #ddd;
+    background-color: white;
+  }
+
+  .form-side-information {
+    padding: 10px 20px 10px 0;
+    font-size: 12px;
+    color: #444;
+  }
+}

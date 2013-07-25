@@ -1,0 +1,39 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: [DEVELOPMENT_DATABASE]
+  pool: 5
+  username: [DEVELOPMENT_USERNAME]
+  password: [DEVELOPMENT_PASSWORD]
+  host: [DEVELOPMENT_DATABASE_URL]
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: [TEST_DATABASE]
+  pool: 5
+  username: [TEST_USERNAME]
+  password: [TEST_PASSWORD]
+  host: [TEST_DATABASE_URL]
+  port: 5432
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: [STAGING_DATABASE]
+  pool: 5
+  username: [STAGING_USERNAME]
+  password: [STAGING_PASSWORD]
+  host: [STAGING_DATABASE_URL]
+  port: 5432
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: [PRODUCTION_DATABASE]
+  pool: 5
+  username: [PRODUCTION_USERNAME]
+  password: [PRODUCTION_PASSWORD]
+  host: [PRODUCTION_DATABASE_URL]
+  port: 5432

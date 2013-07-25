@@ -1,0 +1,64 @@
+@import 'asu_colors';
+
+#main-image {
+  background-color: black;
+  text-align: center;
+
+  img {
+    height: 500px;
+  }
+}
+
+.information {
+  text-align: center;
+
+  .title {
+    display: block;
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  i {
+    color: $asu-maroon;
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  &:hover {
+    .title {
+      color: $asu-maroon;
+    }
+  }
+}
+
+#details {
+  padding: 40px 0;
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid #ccc;
+}
+
+#advisers {
+  padding: 40px 0;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #666;
+
+  .alert {
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+}

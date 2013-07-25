@@ -1,0 +1,3 @@
+class AdminAccount < Account
+
+end

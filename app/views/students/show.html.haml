@@ -1,0 +1,87 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :student => @student }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-user
+  = @student.name
+  %small= link_to "[#{@chapter.name}]", chapter_path(@chapter)
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_info 'Information:'
+
+    %div
+      %table.info-table
+        %tr
+          %td
+            %strong ID:
+          %td= @student.id
+        %tr
+          %td
+            %strong Grade:
+          %td= @student.grade
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_event 'Events:'
+
+    - if @student.events.any?
+      %div
+        %table.table
+          %tr
+            %th Name
+
+          - @student.events.each do |ev|
+            %tr
+              %td.event-name= event_with_icon(ev)
+    - else
+      %div.alert.alert-error
+        %i.icon-exclamation
+        #{@student.name} is not registered for any events.
+        = link_to 'Add some.', edit_chapter_student_path(@chapter, @student)
+
+- if @student.team.present?
+  .row-fluid
+    .section.span12
+      %h4.title= icon_title_team 'Team:'
+
+      %div
+        %table.info-table
+          %tr
+            %td
+              %strong Event:
+            %td
+              = link_to chapter_team_path(@chapter, @student.team) do
+                = event_with_icon(@student.team.event)
+
+          %tr
+            %td
+              %strong Members:
+            %td
+              %table.table
+                %tr
+                  %th ID
+                  %th Name
+                  %th Grade
+
+                - @student.team.students.each do |student|
+                  %tr
+                    %td.student-id= student.id
+                    %td.student-name= link_to student.name, chapter_student_path(student.chapter, student)
+                    %td.student-grade= student.grade
+
+- if @student.results.count > 0 || (@student.team.present? && @student.team.result.present?)
+  .row-fluid
+    .section.span12
+      %h4.title= icon_title_result 'Results:'
+
+      %div
+        %table.table.results
+          - @student.results.each do |r|
+            = render :partial => 'results/table_row', :locals => { :result => r }
+
+          - if @student.team.present? && @student.team.result.present?
+            = render :partial => 'results/table_row', :locals => { :result => @student.team.result }

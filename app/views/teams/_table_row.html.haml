@@ -1,0 +1,7 @@
+%tr
+  %td.team-id= team.id
+  %td.team-event= link_to team.event.name, chapter_team_path(team.chapter, team)
+  %td= team.students.map { |s| link_to s.name, chapter_student_path(s.chapter, s) }.to_sentence(:words_connector => '<br>', :two_words_connector => '<br>', :last_word_connector => '<br>').html_safe
+  %td
+    = link_to_edit team, edit_chapter_team_path(team.chapter, team)
+    = link_to_delete team, delete_chapter_team_path(team.chapter, team)

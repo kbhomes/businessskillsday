@@ -1,0 +1,10 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter }
+
+.row-fluid
+  .span12
+    %h1= icon_title_new 'Adding a new team'
+
+.row-fluid
+  .span12
+    = render 'form'

@@ -1,0 +1,8 @@
+%tr
+  %td.student-id= student.id
+  %td.student-name= link_to student.name, chapter_student_path(student.chapter, student)
+  %td.student-grade= student.grade
+  %td.student-events= events_with_icons(student.events)
+  %td
+    = link_to_edit student, edit_chapter_student_path(student.chapter, student)
+    = link_to_delete student, delete_chapter_student_path(student.chapter, student)

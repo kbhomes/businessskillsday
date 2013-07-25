@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:human_month_day_year] = '%B %-d, %Y'

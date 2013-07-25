@@ -1,0 +1,17 @@
+%tr
+  - if account.is_a? AdminAccount
+    %td.account-email= link_to account.email, admin_account_path(account)
+    %td.account-created= account.created_at.to_s(:human_month_day_year)
+
+  - if account.is_a? StaffAccount
+    %td.account-email= link_to account.email, admin_account_path(account)
+    %td.account-created= account.created_at.to_s(:human_month_day_year)
+
+  - if account.is_a? ChapterAccount
+    %td.account-email= link_to account.email, admin_account_path(account)
+    %td.account-chapter= link_to account.chapter.name, chapter_path(account.chapter)
+    %td.account-created= account.created_at.to_s(:human_month_day_year)
+
+  %td
+    = link_to_edit account, edit_admin_account_path(account)
+    = link_to_delete account, delete_admin_account_path(account), :class => 'btn btn-mini btn-danger'

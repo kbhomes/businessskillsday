@@ -1,0 +1,10 @@
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+- content_for :section_header do
+  %h1= icon_title_chapter 'Chapters'
+
+= render :partial => 'index', :locals => { :chapters => @admin_chapters, :section_header => content_for(:section_header), :show_all => true }

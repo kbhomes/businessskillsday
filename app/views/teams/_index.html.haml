@@ -1,0 +1,32 @@
+.row-fluid
+  .section.span12
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_team 'Teams'
+
+    %div
+      - if teams.count > 0
+        %p.muted
+          %i.icon-info
+          You have #{pluralize teams.count, 'registered team'}.
+          - if can? :create, Team
+            = link_to 'Add another?', new_chapter_team_path(@chapter)
+
+        %table.table
+          %th ID
+          %th Event
+          %th Students
+          %th
+
+          - teams.each do |t|
+            = render :partial => 'teams/table_row', :locals => { :team => t }
+
+        = will_paginate teams
+
+      - else
+        %div.alert.alert-error
+          %i.icon-exclamation
+          You have no registered teams.
+          - if can? :create, Team
+            = link_to 'Add one.', new_chapter_team_path(@chapter)

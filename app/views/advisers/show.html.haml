@@ -1,0 +1,21 @@
+- content_for :sidebar do
+  = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :adviser => @adviser }
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1
+  %i.icon-legal
+  = @adviser.name
+  %small= link_to "[#{@chapter.name}]", chapter_path(@chapter)
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_info 'Information:'
+
+    %div
+      %table.info-table
+        %tr
+          %td
+            %strong ID:
+          %td= @adviser.id

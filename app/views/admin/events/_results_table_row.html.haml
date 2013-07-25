@@ -1,0 +1,7 @@
+%tr
+  %td.event-number= event.number
+  %td.event-name= link_to event_with_icon(event), admin_event_path(event)
+  %td.event-type= event_type(event)
+  %td.event-results= pluralize(event.results.count, 'result')
+  %td
+    = link_to icon_title_result('View Results'), admin_event_results_path(event), :class => 'btn btn-mini'

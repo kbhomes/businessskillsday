@@ -1,0 +1,39 @@
+- if !defined?(show_all)
+  - show_all = true
+- show_max = 5
+
+.row-fluid
+  .span12.section
+    - if defined? section_header
+      = section_header
+    - else
+      %h4.title= icon_title_team 'Team:'
+
+    %div
+      - if teams.count > 0
+        %p.muted= icon_title_info "There are #{pluralize teams.count, 'registered team'}."
+
+        %table.table
+          %th ID
+          %th Event
+          %th Chapter
+          %th Students
+          %th
+
+          - if !show_all
+            - teams.limit(show_max).each do |t|
+              = render :partial => 'admin/teams/table_row', :locals => { :team => t }
+          - else
+            - teams.each do |t|
+              = render :partial => 'admin/teams/table_row', :locals => { :team => t }
+
+        - if show_all
+          = will_paginate teams
+        - if !show_all && teams.count > show_max
+          = link_to 'View all teams', admin_teams_path, :class => 'btn btn-mini'
+
+      - else
+        %div.alert.alert-error= icon_title_exclamation 'There are no registered teams.'
+
+    %div
+      = link_to_new Team, new_admin_team_path
