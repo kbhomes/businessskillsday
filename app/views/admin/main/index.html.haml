@@ -16,25 +16,28 @@
         Staff Dashboard
 
 .row-fluid
-  .span12
-    = render :partial => 'admin/chapters/index', :locals => { :chapters => @admin_chapters, :show_all => false }
+  .span12.section
+    %h4.title= icon_title 'info-sign', 'Statistics:'
 
-.row-fluid
-  .span12
-    = render :partial => 'admin/advisers/index', :locals => { :advisers => @admin_advisers, :show_all => false }
-
-.row-fluid
-  .span12
-    = render :partial => 'admin/students/index', :locals => { :students => @admin_students, :show_all => false }
-
-.row-fluid
-  .span12
-    = render :partial => 'admin/teams/index', :locals => { :teams => @admin_teams, :show_all => false }
-
-.row-fluid
-  .span12
-    = render :partial => 'admin/events/index', :locals => { :events => @admin_events, :show_all => false }
-
-.row-fluid
-  .span12
-    = render :partial => 'admin/accounts/index', :locals => { :accounts => @admin_accounts, :show_all => false }
+    %div
+      %p
+        = icon_title_chapter "There are #{pluralize(@admin_chapters.count, 'chapter')}."
+        = link_to 'View all chapters.', admin_chapters_path
+      %p
+        = icon_title_adviser "There are #{pluralize(@admin_advisers.count, 'adviser')}."
+        = link_to 'View all advisers.', admin_advisers_path
+      %p
+        = icon_title_student "There are #{pluralize(@admin_students.count, 'student')}."
+        = link_to 'View all students.', admin_students_path
+      %p
+        = icon_title_team    "There are #{pluralize(@admin_teams.count,    'team')}."
+        = link_to 'View all teams.', admin_teams_path
+      %p
+        = icon_title_event   "There are #{pluralize(@admin_events.count,   'event')}."
+        = link_to 'View all events.', admin_events_path
+      %p
+        = icon_title_result  "There are #{pluralize(@admin_results.count,  'result')}."
+        = link_to 'View all results.', admin_results_path
+      %p
+        = icon_title_account "There are #{pluralize(@admin_accounts.count, 'account')}."
+        = link_to 'View all accounts.', admin_accounts_path

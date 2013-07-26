@@ -8,6 +8,7 @@ module Admin
       @admin_advisers = Adviser.ordered
       @admin_teams = Team.ordered
       @admin_events = Event.scoped
+      @admin_results = Result.scoped
       @admin_accounts = Account.scoped
     end
   end
