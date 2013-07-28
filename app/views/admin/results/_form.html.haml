@@ -2,14 +2,21 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :score, :as => :integer
+    = f.input :score, :as => :integer, :hint => 'Score must be an integer'
 
     - if @event.is_a? TeamPerformanceEvent
-      = f.association :participant, :as => :select, :collection => @event.participants, :label => 'Team', :label_method => ->(team){ team.chapter.name }
+      = f.association :participant,
+                      :as => :select,
+                      :collection => @event.participants,
+                      :label_method => ->(team){ team.chapter.name },
+                      :label => 'Team',
+                      :hint => 'Team must not already have a result'
     - else
-      = f.association :participant, :as => :select, :collection => @event.participants, :label => 'Student'
-
-
+      = f.association :participant,
+                      :as => :select,
+                      :collection => @event.participants,
+                      :label => 'Student',
+                      :hint => 'Student must not already have a result for this event'
 
   .form-actions
     = f.button :submit, 'Save Result'

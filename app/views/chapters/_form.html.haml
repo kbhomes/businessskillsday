@@ -2,8 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :contact, :label => 'Contact Person'
-    = f.input :email
+    = f.input :contact, :label => 'Contact Person', :hint => "Contact's full name"
+    = f.input :email, :hint => "Contact's email address"
     %hr
     = f.input :address
     = f.input :city

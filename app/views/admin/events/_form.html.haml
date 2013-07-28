@@ -2,8 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :number
-    = f.input :name
+    = f.input :number, :hint => 'Event number must be unique.'
+    = f.input :name, :hint => 'Event name must be unique.'
     = f.input :type, :as => :select, :collection => Event.types, :label_method => ->(t){ t.underscore.humanize }
     = f.input :nine_ten, :label => 'Only grades 9 and 10?', :wrapper => :inline_checkbox
 

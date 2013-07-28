@@ -2,9 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :event, :disabled => @team.event.present?, :collection => TeamPerformanceEvent.where{ |e| e.id.not_in(@chapter.teams.map { |t| t.event_id }) | (e.id == @team.event_id) }
+    = f.association :event, :required => false, :disabled => @team.event.present?, :collection => TeamPerformanceEvent.where{ |e| e.id.not_in(@chapter.teams.map { |t| t.event_id }) | (e.id == @team.event_id) }
     = f.association :students,
                     :as => :students,
+                    :hint => 'You can pick up to four available students for this team.',
                     :collection => @chapter.students.sort_by { |s| if s.can_register_for_team?(@team) && s.can_register_for_event?(@team.event) then 0 else 1 end } #.where{ |s| (s.team_id == nil) | (s.team_id == @team.id) }
 
   .form-actions
