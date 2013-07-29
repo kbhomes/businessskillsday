@@ -4,14 +4,13 @@ class Event < ActiveRecord::Base
   # nine_ten:boolean
   # type:string (internal, for STI)
 
-  default_scope order(:number)
+  default_scope ->{ order(:number) }
 
   def self.types
     types = []
-    types << WrittenEvent
-    types << IndividualPerformanceEvent
-    types << TeamPerformanceEvent
-    types.map { |type| type.name }
+    types << 'WrittenEvent'
+    types << 'IndividualPerformanceEvent'
+    types << 'TeamPerformanceEvent'
   end
 
   def self.attributes_protected_by_default

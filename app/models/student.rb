@@ -2,8 +2,8 @@ class Student < ActiveRecord::Base
   # name:string
   # grade:integer
 
-  default_scope order(:name)
-  scope :ordered, joins(:chapter).reorder('chapters.name', 'students.name')
+  default_scope ->{ order(:name) }
+  scope :ordered, ->{ joins(:chapter).reorder('chapters.name', 'students.name') }
 
   before_save :handle_team
   before_destroy :handle_destroy

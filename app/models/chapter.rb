@@ -8,12 +8,12 @@ class Chapter < ActiveRecord::Base
   # email:string
   # invoice_sent:boolean
 
-  scope :ordered, order(:name)
+  scope :ordered, ->{ order(:name) }
 
   has_many :advisers, :dependent => :destroy, :inverse_of => :chapter
   has_many :teams, :dependent => :destroy, :inverse_of => :chapter
   has_many :students, :dependent => :destroy, :inverse_of => :chapter
-  has_many :events, :through => :students, :uniq => true
+  has_many :events, :through => :students
 
   # Validation
   validates :name, :presence => true, :uniqueness => true

@@ -17,7 +17,7 @@ class Admin::AccountsControllerTest < ActionController::TestCase
   end
 
   test "should create admin_account" do
-    assert_difference('Admin::Account.count') do
+    assert_difference('Account.count') do
       post :create, admin_account: {  }
     end
 

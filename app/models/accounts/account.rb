@@ -6,10 +6,9 @@ class Account < ActiveRecord::Base
 
   def self.types
     types = []
-    types << AdminAccount
-    types << StaffAccount
-    types << ChapterAccount
-    types.map { |type| type.name }
+    types << 'AdminAccount'
+    types << 'StaffAccount'
+    types << 'ChapterAccount'
   end
 
   # Associate the account with a chapter.

@@ -4,8 +4,8 @@ class Result < ActiveRecord::Base
   # participant_id:integer
   # type:string (internal, for STI)
 
-  default_scope order('score DESC')
-  scope :top_five, limit(5)
+  default_scope ->{ order('score DESC') }
+  scope :top_five, ->{ limit(5) }
 
   def self.types
     types = []

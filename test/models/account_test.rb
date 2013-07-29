@@ -18,7 +18,9 @@ class AccountTest < ActiveSupport::TestCase
     account = create :chapter_account, :chapter => chapter
     ability = Ability.new(account)
 
-    assert ability.can?(:manage, chapter), 'Chapter account cannot manage its own chapter'
+    assert ability.can?(:read, chapter), 'Chapter account cannot read its own chapter'
+    assert ability.can?(:update, chapter), 'Chapter account cannot update its own chapter'
+    assert ability.can?(:results, chapter), 'Chapter account cannot manage results on its own chapter'
   end
 
   test 'chapter account cannot manage another chapter' do

@@ -7,6 +7,7 @@ Introduction
 A web interface to manage an [FBLA][1] conference with various events, chapters, students, results, etc.
 
 Built for [Arizona State University Phi Beta Lambda][2]'s annual Business Skills Day event.
+Sits atop Ruby on Rails 4 and PostgreSQL.
 
 [1]: http://fbla-pbl.org/ "Future Business Leaders of America"
 [2]: http://asupbl.org/
@@ -14,7 +15,7 @@ Built for [Arizona State University Phi Beta Lambda][2]'s annual Business Skills
 Requirements
 ------------
 
-* Ruby (1.9 or greater)
+* Ruby (2.0 or greater)
 * PostgreSQL (9.0 or greater)
 
 
