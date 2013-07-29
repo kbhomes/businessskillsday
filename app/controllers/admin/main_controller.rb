@@ -7,9 +7,9 @@ module Admin
       @admin_students = Student.ordered
       @admin_advisers = Adviser.ordered
       @admin_teams = Team.ordered
-      @admin_events = Event.scoped
-      @admin_results = Result.scoped
-      @admin_accounts = Account.scoped
+      @admin_events = Event.all
+      @admin_results = Result.all
+      @admin_accounts = Account.all
     end
   end
 end

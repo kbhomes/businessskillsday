@@ -4,7 +4,7 @@ module Admin
     before_filter :get_event
 
     def index
-      @admin_events = Event.scoped.page(params[:page])
+      @admin_events = Event.all.page(params[:page])
     end
 
     def show

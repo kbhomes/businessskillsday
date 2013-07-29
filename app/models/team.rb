@@ -1,7 +1,6 @@
 class Team < ActiveRecord::Base
 
-
-  scope :ordered, joins(:event).joins(:chapter).reorder('events.name', 'chapters.name')
+  scope :ordered, ->{ joins(:event).joins(:chapter).reorder('events.name', 'chapters.name') }
 
   before_destroy :handle_destroy
 
