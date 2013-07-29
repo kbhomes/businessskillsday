@@ -1,3 +1,5 @@
+- title "Student #{@student.name}"
+
 - content_for :sidebar do
   = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :student => @student }
 

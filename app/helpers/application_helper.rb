@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def title(page_title)
+    content_for :title, page_title
+  end
+
   def active_action?(controller, action)
     controller ||= controller_name
     action ||= action_name

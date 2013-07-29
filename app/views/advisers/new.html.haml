@@ -1,9 +1,11 @@
+
+
 - content_for :sidebar do
   = render :partial => 'chapters/sidebar', :locals => { :chapter => @chapter, :adviser => @adviser }
 
 .row-fluid
   .span12
-    %h1= icon_title_new 'Adding a new adviser'
+    %h1= icon_title_new "Adding a new adviser for #{@chapter.name}"
 
 .row-fluid
   .span12
