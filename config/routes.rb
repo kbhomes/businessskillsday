@@ -4,9 +4,9 @@ BusinessSkillsDay::Application.routes.draw do
   root :to => 'main#index'
 
   # Session controller.
-  get '/login' => 'sessions#new', :as => :login
+  get '/login' => 'sessions#new', :as => :new_login
   post '/login' => 'sessions#create', :as => :login
-  match '/logout' => 'sessions#destroy', :as => :logout
+  match '/logout' => 'sessions#destroy', :as => :logout, :via => :all
 
   # Account resource to access the current user's account.
   resource :account, :only => [:show, :edit, :update]

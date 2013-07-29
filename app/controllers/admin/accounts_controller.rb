@@ -4,7 +4,7 @@ module Admin
     before_filter :get_account
 
     def index
-      @admin_accounts = Account.scoped.page(params[:page])
+      @admin_accounts = Account.all.page(params[:page])
     end
 
     def show

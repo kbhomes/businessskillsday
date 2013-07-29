@@ -1,7 +1,7 @@
 class Adviser < ActiveRecord::Base
   # name:string
 
-  scope :ordered, joins(:chapter).reorder('chapters.name', 'advisers.name')
+  scope :ordered, ->{ joins(:chapter).reorder('chapters.name', 'advisers.name') }
 
   belongs_to :chapter, :inverse_of => :advisers
 
