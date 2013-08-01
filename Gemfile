@@ -5,10 +5,12 @@ gem 'thin'
 
 gem 'pg'
 gem 'squeel'
-gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'bcrypt-ruby', '3.0.1'
 gem 'cancan'
 gem 'dotenv-rails'
 
+gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'haml-rails'
 gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -21,9 +23,9 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem 'will_paginate', '~> 3.0'
 
 group :test do
-  if RUBY_PLATFORM =~ /(win32|w32)/
-    gem 'win32console', '1.3.0'
-  end
+  #if RUBY_PLATFORM =~ /(win32|w32)/
+  #  gem 'win32console', '1.3.0'
+  #end
 
   gem 'minitest'
   gem 'minitest-reporters', '>= 0.5.0'
