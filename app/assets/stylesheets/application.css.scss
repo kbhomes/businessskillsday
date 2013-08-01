@@ -21,6 +21,10 @@
 #header {
   background-color: black;
   height: 50px;
+
+  & > a:first-child:hover {
+    text-decoration: none;
+  }
 }
 
 #logo {
