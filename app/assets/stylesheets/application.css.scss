@@ -28,7 +28,7 @@
 }
 
 #logo {
-  background-image: url('bsd/logo_tiny.png');
+  background-image: image-url('bsd/logo_tiny.png');
   width: 227px;
   height: 50px;
   margin: 0 5px;
@@ -92,7 +92,7 @@
     padding: 0px 10px;
     display: inline-block;
 
-    box-shadow: inset #FFB310 0px 0px;
+    box-shadow: insetBusiness Skills Day 25 #FFB310 0px 0px;
     -webkit-transition: box-shadow 0.2s;
     -moz-transition: box-shadow 0.2s;
     -o-transition: box-shadow 0.2s;
