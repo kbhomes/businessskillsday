@@ -40,5 +40,8 @@ group :development do
   gem 'aws-sdk'
 end
 
+# Used by Heroku
+gem 'rails_12factor', :groups => [:production, :staging]
+
 gem 'factory_girl_rails', :groups => [:development, :test]
 gem 'faker',              :groups => [:development, :test]
