@@ -21,7 +21,7 @@
 
   %body
 
-    #header
+    #header.fixed
       = link_to root_path do
         #logo
 
@@ -32,6 +32,8 @@
 
       #session-header
         = render 'sessions/header'
+
+    #push-header
 
     = yield :before_page
 
