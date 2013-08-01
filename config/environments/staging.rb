@@ -2,7 +2,7 @@ BusinessSkillsDay::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Provide basic password protection
-  config.middleware.insert_after(::Rack::Lock, '::Rack::Auth::Basic', 'Staging') do |u, p|
+  config.middleware.insert_after(::Rack::Runtime, '::Rack::Auth::Basic', 'Staging') do |u, p|
     [u, p] == [ENV['STAGING_USERNAME'], ENV['STAGING_PASSWORD']]
   end
 
