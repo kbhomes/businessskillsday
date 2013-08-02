@@ -20,14 +20,14 @@
         catch error
 
       $(document).on 'page:fetch', ->
-        $('#page').animate { opacity: 0.3 },  'slow'
+        $('#content').animate { opacity: 0.3 },  'slow'
         $('#loading').fadeIn()
 
       $(document).on 'page:receive', ->
         $('#loading').fadeOut()
 
       $(document).on 'page:change', ->
-        $('#page').css('opacity', 0.3).animate { opacity: 1 }, 'slow'
+        $('#content').css('opacity', 0.3).animate { opacity: 1 }, 'slow'
 
   %body
 
