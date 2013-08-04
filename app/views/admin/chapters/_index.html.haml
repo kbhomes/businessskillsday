@@ -9,6 +9,12 @@
     - else
       %h4.title= icon_title_chapter 'Chapters:'
 
+    .row-fluid
+      .section.span12
+        %h4.title= icon_title 'cog', 'Actions:'
+        %div
+          = link_to_new Chapter, new_admin_chapter_path
+
     %div
       - if chapters.count > 0
         %p.muted= icon_title_info "There are #{pluralize chapters.count, 'registered chapter'}."
@@ -35,6 +41,3 @@
 
       - else
         %div.alert.alert-error= icon_title_exclamation 'There are no registered chapters.'
-
-    %div
-      = link_to_new Chapter, new_admin_chapter_path

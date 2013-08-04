@@ -9,6 +9,13 @@
     - else
       %h4.title= icon_title_event 'Events:'
 
+    - if can? :create, :event
+      .row-fluid
+        .span12.section
+          %h4.title= icon_title 'cog', 'Actions:'
+          %div
+            = link_to_new Event, new_admin_event_path
+
     %div
       - if events.count > 0
         %p.muted= icon_title_info "There are #{pluralize events.count, 'registered event'}."
@@ -34,6 +41,3 @@
 
       - else
         %div.alert.alert-error= icon_title_exclamation 'There are no registered chapters.'
-
-    %div
-      = link_to_new Event, new_admin_event_path

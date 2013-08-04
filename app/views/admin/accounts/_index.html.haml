@@ -13,6 +13,12 @@
     - else
       %h4.title= icon_title_account 'Accounts:'
 
+    .row-fluid
+      .section.span12
+        %h5.title= icon_title 'cog', 'Actions:'
+        %div
+          = link_to_new Account, new_admin_account_path
+
     %div.section
       %h5.title= icon_title 'key', 'Administrator accounts:'
 
@@ -82,6 +88,3 @@
           = will_paginate chapter_accounts
         - if !show_all && chapter_accounts.count > show_max
           = link_to 'View all accounts', admin_accounts_path, :class => 'btn btn-mini'
-
-    %div
-      = link_to_new Account, new_admin_account_path
