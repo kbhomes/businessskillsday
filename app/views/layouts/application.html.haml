@@ -12,13 +12,6 @@
     = csrf_meta_tags
 
     :coffee
-      $ ->
-        try
-          responder = new BSD.#{controller_path.classify.gsub(/::/,'.')} || new BSD.Responder;
-          action = "#{action_name}"
-          responder[action]?()
-        catch error
-
       $(document).on 'page:fetch', ->
         $('#content').animate { opacity: 0.3 },  'slow'
         $('#loading').fadeIn()
@@ -78,3 +71,11 @@
               %li
                 %i.icon-twitter-sign
                 = link_to '@asupbl', 'http://www.twitter.com/asupbl'
+
+    :coffee
+      $ ->
+        try
+          responder = new BSD.#{controller_path.classify.gsub(/::/,'.')} || new BSD.Responder;
+          action = "#{action_name}"
+          responder[action]?()
+        catch error
