@@ -1,3 +1,8 @@
+- unless defined?(show_max)
+  - show_all = true
+- else
+  - show_all = false
+
 .row-fluid
   .section.span12
     - if defined? section_header
@@ -19,10 +24,17 @@
           %th Students
           %th
 
-          - teams.each do |t|
-            = render :partial => 'teams/table_row', :locals => { :team => t }
+          - if show_all
+            - teams.each do |t|
+              = render :partial => 'teams/table_row', :locals => { :team => t }
+          - else
+            - teams.limit(show_max).each do |t|
+              = render :partial => 'teams/table_row', :locals => { :team => t }
 
-        = will_paginate teams
+        - if show_all
+          = will_paginate teams
+        - elsif show_max < teams.count
+          = link_to 'View all teams', chapter_teams_path(@chapter), :class => 'btn btn-small'
 
       - else
         %div.alert.alert-error

@@ -28,8 +28,8 @@
       %br/
       %span #{@chapter.city}, #{@chapter.state} #{@chapter.zip}
 
-= render :partial => 'advisers/index', :locals => { :advisers => @chapter.advisers.page(1) }
+= render :partial => 'advisers/index', :locals => { :advisers => @chapter.advisers, :show_max => 5 }
 
-= render :partial => 'students/index', :locals => { :students => @chapter.students.page(1) }
+= render :partial => 'students/index', :locals => { :students => @chapter.students, :show_max => 5 }
 
-= render :partial => 'teams/index', :locals => { :teams => @chapter.teams.page(1) }
+= render :partial => 'teams/index', :locals => { :teams => @chapter.teams, :show_max => 5 }

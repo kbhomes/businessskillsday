@@ -1,3 +1,8 @@
+- unless defined?(show_max)
+  - show_all = true
+- else
+  - show_all = false
+
 .row-fluid
   .section.span12
     - if defined? section_header
@@ -17,10 +22,17 @@
           %th Name
           %th
 
-          - advisers.each do |a|
-            = render :partial => 'advisers/table_row', :locals => { :adviser => a }
+          - if show_all
+            - advisers.each do |a|
+              = render :partial => 'advisers/table_row', :locals => { :adviser => a }
+          - else
+            - advisers.limit(show_max).each do |a|
+              = render :partial => 'advisers/table_row', :locals => { :adviser => a }
 
-        = will_paginate advisers
+        - if show_all
+          = will_paginate advisers
+        - elsif show_max < advisers.count
+          = link_to 'View all advisers', chapter_advisers_path(@chapter), :class => 'btn btn-small'
 
       - else
         %div.alert.alert-error

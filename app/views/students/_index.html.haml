@@ -1,3 +1,8 @@
+- unless defined?(show_max)
+  - show_all = true
+- else
+  - show_all = false
+
 .row-fluid
   .section.span12
     - if defined? section_header
@@ -20,10 +25,17 @@
           %th Events
           %th
 
-          - students.each do |s|
-            = render :partial => 'students/table_row', :locals => { :student => s }
+          - if show_all
+            - students.each do |s|
+              = render :partial => 'students/table_row', :locals => { :student => s }
+          - else
+            - students.limit(show_max).each do |s|
+              = render :partial => 'students/table_row', :locals => { :student => s }
 
-        = will_paginate students
+        - if show_all
+          = will_paginate students
+        - elsif show_max < students.count
+          = link_to 'View all students', chapter_students_path(@chapter), :class => 'btn btn-small'
 
       - else
         %div.alert.alert-error
