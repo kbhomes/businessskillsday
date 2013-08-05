@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ChaptersControllerTest < ActionController::TestCase
   setup do
-    @chapter = chapters(:ironwood)
+    @chapter = create :chapter
+    login account_for(@chapter)
   end
 
   test 'should show chapter' do

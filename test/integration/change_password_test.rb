@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LoginLogoutTest < ActionDispatch::IntegrationTest
+class ChangePasswordTest < ActionDispatch::IntegrationTest
 
   def create_chapter_account
     @account ||= create :chapter_account, :password => 'password'
@@ -35,14 +35,14 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     create_staff_account
     login @account
 
-    visit edit_admin_account_path(@account)
+    visit edit_account_path(@account)
 
     fill_in 'Current password', :with => 'password'
     fill_in 'New password', :with => 'new_password'
     fill_in 'Password confirmation', :with => 'new_password'
     click_button 'Save Account'
 
-    assert current_path == admin_account_path(@account), 'Did not redirect to account page'
+    assert current_path == account_path, 'Did not redirect to account page'
     assert page.has_content?('successfully'), 'Did not change password successfully'
 
     logout
@@ -53,7 +53,7 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     create_staff_account
     login @account
 
-    visit edit_admin_account_path(@account)
+    visit edit_account_path
 
     fill_in 'Current password', :with => 'not_password'
     fill_in 'New password', :with => 'new_password'
@@ -68,7 +68,7 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     create_staff_account
     login @account
 
-    visit edit_admin_account_path(@account)
+    visit edit_account_path
 
     fill_in 'Current password', :with => 'password'
     fill_in 'New password', :with => 'new_password'
@@ -83,7 +83,7 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     create_staff_account
     login @account
 
-    visit edit_admin_account_path(@account)
+    visit edit_account_path
 
     fill_in 'Current password', :with => 'password'
     fill_in 'New password', :with => 'short'
@@ -98,7 +98,7 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     create_staff_account
     login @account
 
-    visit edit_admin_account_path(@account)
+    visit edit_account_path
 
     fill_in 'Email', :with => 'not_old_email@example.com'
     click_button 'Save Account'

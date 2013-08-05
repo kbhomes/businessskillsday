@@ -95,7 +95,7 @@ class StudentsControllerTest < ActionController::TestCase
           :chapter_id => @chapter,
           :id => @student,
           :student => {
-              :event_ids => [ create(:individual_performance_event).id, create(:team_performance_event).id ]
+              :event_ids => [ create(:individual_performance_event).id, create(:individual_performance_event).id ]
           }
     end
 

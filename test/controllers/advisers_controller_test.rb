@@ -2,14 +2,9 @@ require 'test_helper'
 
 class AdvisersControllerTest < ActionController::TestCase
   setup do
-    @adviser = advisers(:dlsmith)
-    @chapter = @adviser.chapter
-  end
-
-  test "should get index" do
-    get :index, :chapter_id => @chapter
-    assert_response :success
-    assert_not_nil assigns(:advisers)
+    @chapter = create :chapter
+    @adviser = create :adviser, :chapter => @chapter
+    login account_for(@chapter)
   end
 
   test "should get new" do
@@ -20,7 +15,7 @@ class AdvisersControllerTest < ActionController::TestCase
   test "should create adviser" do
     assert_difference('@chapter.advisers.count') do
       post :create,
-           :chapter_id => @chapter,
+           :chapter_id => @chapter.id,
            :adviser => {
                :name => 'Renee Ciezki'
            }

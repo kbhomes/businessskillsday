@@ -31,8 +31,8 @@ class Student < ActiveRecord::Base
   end
 
   def validate_events
-    return if events.count <= 3
-    errors.add(:events, "Can't participate in more than 3 events (including team events)")
+    errors.add(:events, "Can't participate in more than 3 events (including team events)") unless events.count <= 3
+    errors.add(:events, "Can't participate in more than 1 performance event") unless events.select{ |e| e.is_a? PerformanceEvent }.count <= 1
   end
 
   def handle_team
