@@ -37,8 +37,7 @@ class Ability
       can :read, Team
       can :read, Event
       can :manage, Result
-      can :read, Account
-      can :update, Account, :id => account.id
+      can [:read, :update], Account, :id => account.id
 
       can :manage, :admin
     end

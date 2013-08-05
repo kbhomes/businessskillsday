@@ -1,7 +1,7 @@
 module Admin
   class AccountsController < AdminController
 
-    before_filter :get_account
+    before_filter :check_authorization, :get_account
 
     def index
       @admin_accounts = Account.all.page(params[:page])
@@ -64,6 +64,10 @@ module Admin
     end
 
     private
+
+    def check_authorization
+      redirect_to post_login_url(current_account), :flash => { :error => 'You cannot view other accounts.' } unless can?(:manage, Account)
+    end
 
     def get_account
       @admin_account = Account.find(params[:id]) if params[:id]

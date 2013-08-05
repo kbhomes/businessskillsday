@@ -75,33 +75,31 @@ class StaffAbilityTest < ActiveSupport::TestCase
     assert @ability.cannot?(:destroy, team_performance_event), 'Staff account could destroy team performance event'
   end
 
-  test 'staff account can only read accounts' do
+  test 'staff account can only read and edit its own account' do
+    assert @ability.can?(:read, @account), 'Staff account could not read its own account'
+    assert @ability.can?(:update, @account), 'Staff account could not update its own account'
+    assert @ability.cannot?(:destroy, @account), 'Staff account could not delete its own account'
+
     chapter_account = create :chapter_account
     staff_account = create :staff_account
     admin_account = create :admin_account
 
-    assert @ability.can?(:read, chapter_account), 'Staff account could not read other chapter account'
-    assert @ability.can?(:read, staff_account), 'Staff account could not read other staff account'
-    assert @ability.can?(:read, admin_account), 'Staff account could not read other admin account'
+    assert @ability.cannot?(:read, chapter_account), 'Staff account could read other chapter account'
+    assert @ability.cannot?(:read, staff_account), 'Staff account could read other staff account'
+    assert @ability.cannot?(:read, admin_account), 'Staff account could read other admin account'
 
     assert @ability.cannot?(:create, Account), 'Staff account could create account'
     assert @ability.cannot?(:create, ChapterAccount), 'Staff account could create chapter account'
     assert @ability.cannot?(:create, StaffAccount), 'Staff account could create staff account'
     assert @ability.cannot?(:create, AdminAccount), 'Staff account could create admin account'
-                       
+
     assert @ability.cannot?(:update, chapter_account), 'Staff account could update other chapter account'
     assert @ability.cannot?(:update, staff_account), 'Staff account could update other staff account'
     assert @ability.cannot?(:update, admin_account), 'Staff account could update other admin account'
-                       
+
     assert @ability.cannot?(:destroy, chapter_account), 'Staff account could destroy other chapter account'
     assert @ability.cannot?(:destroy, staff_account), 'Staff account could destroy other staff account'
     assert @ability.cannot?(:destroy, admin_account), 'Staff account could destroy other admin account'
-  end
-
-  test 'staff account can only read and edit its own account' do
-    assert @ability.can?(:read, @account), 'Staff account could not read its own account'
-    assert @ability.can?(:update, @account), 'Staff account could not update its own account'
-    assert @ability.cannot?(:destroy, @account), 'Staff account could not delete its own account'
   end
 
   test 'staff account can access the admin controller' do

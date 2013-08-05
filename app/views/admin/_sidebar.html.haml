@@ -11,4 +11,6 @@
   = sidebar_link 'Teams', admin_teams_path, :controller => 'teams', :action => ['index', 'new', 'create']
   = sidebar_link 'Events', admin_events_path, :controller => 'events'
   = sidebar_link 'Results', admin_results_path, :controller => 'results'
-  = sidebar_link 'Accounts', admin_accounts_path, :controller => 'accounts'
+
+  - if can? :manage, Account
+    = sidebar_link 'Accounts', admin_accounts_path, :controller => 'accounts'

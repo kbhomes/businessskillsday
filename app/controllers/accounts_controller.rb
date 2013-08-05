@@ -33,7 +33,7 @@ class AccountsController < ApplicationController
   private
 
     def redirect_admin
-      redirect_to admin_account_url(current_account) if can? :manage, :admin
+      redirect_to admin_account_url(current_account) if can? :manage, Account
     end
 
     def get_account

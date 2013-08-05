@@ -23,7 +23,7 @@ class RegistrationsController < ApplicationController
   private
 
     def redirect_accounts
-      redirect_to post_login_url(current_account), :flash => { :error => 'You cannot register for another account.' } if cannot?(:create, Registration)
+      redirect_to post_login_url(current_account), :flash => { :error => 'You cannot register for another account.' } unless can?(:create, Registration)
     end
 
     def registration_params
