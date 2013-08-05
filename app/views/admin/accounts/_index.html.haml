@@ -13,11 +13,12 @@
     - else
       %h4.title= icon_title_account 'Accounts:'
 
-    .row-fluid
-      .section.span12
-        %h5.title= icon_title 'cog', 'Actions:'
-        %div
-          = link_to_new Account, new_admin_account_path
+    - if can? :create, Account
+      .row-fluid
+        .section.span12
+          %h5.title= icon_title 'cog', 'Actions:'
+          %div
+            = link_to_new Account, new_admin_account_path
 
     %div.section
       %h5.title= icon_title 'key', 'Administrator accounts:'

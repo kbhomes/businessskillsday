@@ -7,7 +7,7 @@
   %p#notice.alert.alert-success= notice
 
 .row-fluid
-  .span12
+  .span12.section
     %h1.title
       = icon_title_account @admin_account.display_name
       - if @admin_account.is_a? AdminAccount
@@ -17,28 +17,30 @@
       - if @admin_account.is_a? ChapterAccount
         %small= icon_title 'flag', 'Chapter Account'
 
-.row-fluid
-  .section.span12
-    %h4.title= icon_title_info 'Information:'
+    - if can?(:edit, @admin_account) || can?(:delete, @admin_account)
+      .row-fluid
+        .span12.section
+          %h4.title= icon_title 'cog', 'Actions:'
+          %div
+            = link_to_edit @admin_account, edit_admin_account_path(@admin_account)
+            = link_to_delete @admin_account, delete_admin_account_path(@admin_account)
 
-    %div
-      %table.info-table
-        %tr
-          %td
-            %strong Email:
-          %td= @admin_account.email
-        - if @admin_account.is_a? ChapterAccount
-          %tr
-            %td
-              %strong Chapter:
-            %td= link_to icon_title_chapter(@admin_account.chapter.name), chapter_path(@admin_account.chapter)
-        %tr
-          %td
-            %strong Created On:
-          %td= @admin_account.created_at.to_s(:human_month_day_year)
+    .row-fluid
+      .section.span12
+        %h4.title= icon_title_info 'Information:'
 
-.row-fluid
-  .span12.section
-    %div
-      = link_to_edit @admin_account, edit_admin_account_path(@admin_account)
-      = link_to_delete @admin_account, delete_admin_account_path(@admin_account)
+        %div
+          %table.info-table
+            %tr
+              %td
+                %strong Email:
+              %td= @admin_account.email
+            - if @admin_account.is_a? ChapterAccount
+              %tr
+                %td
+                  %strong Chapter:
+                %td= link_to icon_title_chapter(@admin_account.chapter.name), chapter_path(@admin_account.chapter)
+            %tr
+              %td
+                %strong Created On:
+              %td= @admin_account.created_at.to_s(:human_month_day_year)

@@ -7,47 +7,47 @@
   %p#notice.alert.alert-success= notice
 
 .row-fluid
-  .span12
+  .span12.section
     %h1= event_with_icon @admin_event
+    %div
+      - if can?(:edit, @admin_event) || can?(:delete, @admin_event)
+        .row-fluid
+          .span12.section
+            %h4.title= icon_title 'cog', 'Actions:'
+            %div
+              = link_to_edit @admin_event, edit_admin_event_path(@admin_event)
+              = link_to_delete @admin_event, delete_admin_event_path(@admin_event)
 
-- if can?(:edit, @admin_event) || can?(:delete, @admin_event)
-  .row-fluid
-    .span12.section
-      %h4.title= icon_title 'cog', 'Actions:'
-      %div
-        = link_to_edit @admin_event, edit_admin_event_path(@admin_event)
-        = link_to_delete @admin_event, delete_admin_event_path(@admin_event)
+      = render :partial => 'admin/results/index', :locals => { :event => @admin_event, :results => @admin_event.results, :preview => true }
 
-= render :partial => 'admin/results/index', :locals => { :event => @admin_event, :results => @admin_event.results, :preview => true }
+      - if @admin_event.is_a? TeamPerformanceEvent
+        .row-fluid
+          .span12.section
+            %h4.title= icon_title_team 'Teams:'
 
-- if @admin_event.is_a? TeamPerformanceEvent
-  .row-fluid
-    .span12.section
-      %h4.title= icon_title_team 'Teams:'
+            %div
+              %table.table
+                %th ID
+                %th Event
+                %th Chapter
+                %th Students
+                %th
 
-      %div
-        %table.table
-          %th ID
-          %th Event
-          %th Chapter
-          %th Students
-          %th
-
-          - @admin_event.participants.ordered.each do |t|
-            = render :partial => 'admin/teams/table_row', :locals => { :team => t }
+                - @admin_event.participants.ordered.each do |t|
+                  = render :partial => 'admin/teams/table_row', :locals => { :team => t }
 
 
-- else
-  .row-fluid
-    .span12.section
-      %h4.title= icon_title_student 'Students:'
+      - else
+        .row-fluid
+          .span12.section
+            %h4.title= icon_title_student 'Students:'
 
-      %div
-        %table.table
-          %th ID
-          %th Name
-          %th Chapter
-          %th
+            %div
+              %table.table
+                %th ID
+                %th Name
+                %th Chapter
+                %th
 
-          - @admin_event.participants.ordered.each do |s|
-            = render :partial => 'admin/students/table_row', :locals => { :student => s }
+                - @admin_event.participants.ordered.each do |s|
+                  = render :partial => 'admin/students/table_row', :locals => { :student => s }

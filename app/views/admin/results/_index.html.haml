@@ -3,7 +3,7 @@
   - full_view = false
   - columns = [:rank, :chapter, :participant, :score]
 - else
-  -shown_results = results
+  - shown_results = results
   - full_view = true
   - columns = [:rank, :chapter, :participant, :score, :actions]
 
@@ -41,3 +41,6 @@
         %div.alert.alert-error
           %i.icon-exclamation
           This event has no results.
+
+      - unless full_view
+        = link_to 'Manage results', admin_event_results_path(event), :class => 'btn btn-small'
