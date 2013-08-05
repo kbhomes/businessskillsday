@@ -8,6 +8,9 @@ BusinessSkillsDay::Application.routes.draw do
   post '/login' => 'sessions#create', :as => :login
   match '/logout' => 'sessions#destroy', :as => :logout, :via => :all
 
+  # Registration resource to allow a user to apply for a new chapter.
+  resources :registrations, :only => [:new, :create]
+
   # Account resource to access the current user's account.
   resource :account, :only => [:show, :edit, :update]
 
@@ -22,9 +25,9 @@ BusinessSkillsDay::Application.routes.draw do
   # Admin namespace.
   namespace :admin do
     resources :chapters,  :except => [:show, :edit, :update] do get :delete, :on => :member end
-    resources :advisers,  :except => [:create, :show, :edit, :update]
-    resources :students,  :except => [:create, :show, :edit, :update]
-    resources :teams,     :except => [:create, :show, :edit, :update]
+    resources :advisers,  :except => [:new, :create, :show, :edit, :update]
+    resources :students,  :except => [:new, :create, :show, :edit, :update]
+    resources :teams,     :except => [:new, :create, :show, :edit, :update]
     resources :events do
       get :delete, :on => :member
 

@@ -1,0 +1,41 @@
+- title 'Register'
+
+.container
+  .row
+    .spacer-medium
+
+  .row
+    .span8.offset2
+      .row
+        %h1= icon_title_new 'Register'
+
+      - if flash[:error].present?
+        .row
+          %p#notice.alert.alert-error= icon_title 'remove', flash[:error]
+
+      - if notice.present?
+        .row
+          %p#notice.alert.alert-success= icon_title 'ok', notice
+
+      .row
+        = simple_form_for @registration, :html => { :class => 'form form-horizontal' } do |f|
+          = f.error_notification
+
+          .form-inputs
+            = f.input :chapter, :label => 'Chapter Name'
+            = f.input :email, :hint => 'This email will be used to login'
+            = f.input :contact, :label => 'Contact Person', :hint => "Contact's full name"
+
+            %hr
+
+            = f.input :address
+            = f.input :city
+            = f.input :state, :collection => us_states
+            = f.input :zip
+
+          .form-actions.plain
+            = f.button :submit, 'Register'
+
+
+  .row
+    .spacer-small
