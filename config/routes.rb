@@ -9,7 +9,7 @@ BusinessSkillsDay::Application.routes.draw do
   match '/logout' => 'sessions#destroy', :as => :logout, :via => :all
 
   # Registration resource to allow a user to apply for a new chapter.
-  resources :registrations, :only => [:new, :create]
+  resources :registrations, :only => [:index, :new, :create]
 
   # Account resource to access the current user's account.
   resource :account, :only => [:show, :edit, :update]

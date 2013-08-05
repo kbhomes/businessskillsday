@@ -103,4 +103,16 @@ class ChapterAbilityTest < ActiveSupport::TestCase
     assert ability.cannot?(:destroy, other_account), 'Chapter account could destroy other account'
   end
 
+  test 'chapter account cannot manage/create/edit/destroy registrations' do
+    account = create :chapter_account
+    ability = Ability.new(account)
+    registration = create :registration
+
+    assert ability.cannot?(:manage, Registration), 'Chapter account could manage registration'
+    assert ability.cannot?(:create, Registration), 'Chapter account could create registration'
+    assert ability.cannot?(:read, registration), 'Chapter account could read registration'
+    assert ability.cannot?(:update, registration), 'Chapter account could update registration'
+    assert ability.cannot?(:destroy, registration), 'Chapter account could destroy registration'
+  end
+
 end

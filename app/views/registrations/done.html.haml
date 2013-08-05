@@ -1,0 +1,23 @@
+- title 'Finished registration'
+
+.container
+  .row
+    .spacer-medium
+
+  .row
+    .span6.offset3
+      .row
+        %h1= icon_title 'ok', 'Finished registration'
+
+      .well.row.copy-small.padding-large
+        :markdown
+          An application for registration for your chapter, **#{@registration.chapter}**, was successfully created.
+
+          An administrator will need to approve an account for the email **#{@registration.email}**. Once the account
+          is approved, a temporary password will be sent to the registered email. You will be asked to
+          change your password once you login.
+
+          Thank you for registering!
+
+  .row
+    .spacer-small

@@ -55,9 +55,9 @@
               .title Registration
         .row
           .span4.offset4
-            .alert.alert-error
-              %i.icon-time
-              Registration will open <strong>October 2013</strong>.
+            .well.text-center.copy-large
+              %p= link_to icon_title_new('Register your chapter.'), new_registration_url
+              %p= icon_title 'time', 'Registration will close on <strong>November 2013</strong>.'
 
     #footer
       .container

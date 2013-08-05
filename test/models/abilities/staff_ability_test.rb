@@ -107,4 +107,14 @@ class StaffAbilityTest < ActiveSupport::TestCase
   test 'staff account can access the admin controller' do
     assert @ability.can?(:manage, :admin), 'Staff account could access admin controller'
   end
+
+  test 'staff account cannot manage/create/edit/destroy registrations' do
+    registration = create :registration
+
+    assert @ability.cannot?(:manage, Registration), 'Staff account could manage registration'
+    assert @ability.cannot?(:create, Registration), 'Staff account could create registration'
+    assert @ability.cannot?(:read, registration), 'Staff account could read registration'
+    assert @ability.cannot?(:update, registration), 'Staff account could update registration'
+    assert @ability.cannot?(:destroy, registration), 'Staff account could destroy registration'
+  end
 end

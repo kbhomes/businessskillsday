@@ -16,6 +16,7 @@ class Ability
 
     def no_account_abilities
       cannot :manage, :all
+      can :create, Registration
     end
 
     def chapter_account_abilities(account)
