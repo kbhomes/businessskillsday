@@ -93,6 +93,10 @@ module ApplicationHelper
     icon_title 'trophy', title
   end
 
+  def icon_title_registration(title)
+    icon_title 'rocket', title
+  end
+
   #def link_to_new(type, url, options = {})
   #  link_to url, { :class => 'btn btn-mini btn-success' }.merge(options) do
   #    "<i class='icon-plus'></i> New #{type.humanize}".html_safe

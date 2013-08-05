@@ -16,7 +16,7 @@
         $('#content').animate { opacity: 0.3 },  'slow'
         $('#loading').fadeIn()
 
-      $(document).on 'page:receive', ->
+      $(document).on 'page:receive page:restore', ->
         $('#loading').fadeOut()
 
       $(document).on 'page:change', ->

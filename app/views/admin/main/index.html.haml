@@ -43,3 +43,6 @@
       %p
         = icon_title_account "There are #{pluralize(@admin_accounts.count, 'account')}."
         = link_to 'View all accounts.', admin_accounts_path
+      %p
+        = icon_title_registration "There are #{pluralize(@admin_registrations.count, 'pending registration')}."
+        = link_to 'View all registrations.', admin_registrations_path

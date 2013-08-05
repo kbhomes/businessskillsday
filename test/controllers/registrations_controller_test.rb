@@ -27,7 +27,8 @@ class RegistrationsControllerTest < ActionController::TestCase
     end
 
     assert_response :success
-    assert assigns[:registration]
+    assert_template :done
+    assert assigns(:registration)
   end
 
   test 'should not create an invalid registration object, failing with errors' do
@@ -42,9 +43,8 @@ class RegistrationsControllerTest < ActionController::TestCase
           :state    => dummy.state,
           :zip      => dummy.zip
       }
-
-    assert !assigns[:registration].errors.empty?
     end
-  end
 
+    assert !assigns(:registration).errors.empty?
+  end
 end

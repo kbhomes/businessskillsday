@@ -1,0 +1,10 @@
+%tr
+  %td.registration-chapter= link_to registration.chapter, admin_registration_path(registration)
+  %td.registration-email= registration.email
+  %td.registration-contact= registration.contact
+  %td.registration-created= registration.created_at.to_s(:human_month_day_year)
+  %td
+    - if can? :approve, registration
+      = link_to icon_title('rocket', 'Approve'), confirm_admin_registration_path(registration), :class => 'btn btn-mini btn-success'
+    = link_to_edit registration, edit_admin_registration_path(registration)
+    = link_to_delete registration, delete_admin_registration_path(registration)

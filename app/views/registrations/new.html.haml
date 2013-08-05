@@ -18,29 +18,12 @@
           %p#notice.alert.alert-success= icon_title 'ok', notice
 
       .row
-        = simple_form_for @registration, :html => { :class => 'form form-horizontal' } do |f|
+        .form-description
+          Apply to register your chapter for Business Skills Day 25. Once you register,
+          an administrator will need to approve your account. A temporary password will be
+          sent to the email provided below once your account is approved.
 
-          .form-description
-            Apply to register your chapter for Business Skills Day 25. Once you register,
-            an administrator will need to approve your account. A temporary password will be
-            sent to the email provided below once your account is approved.
-
-          = f.error_notification
-
-          .form-inputs
-            = f.input :chapter, :label => 'Chapter Name', :placeholder => 'Sunnyside'
-            = f.input :email, :hint => 'This email will be used to login', :placeholder => 'mjones@sunnyside.edu'
-            = f.input :contact, :label => 'Contact Person', :hint => "Contact's full name", :placeholder => 'Mike Jones'
-
-            %hr
-
-            = f.input :address, :placeholder => '1120 Sunnyside Drive'
-            = f.input :city, :placeholder => 'Tempe'
-            = f.input :state, :collection => us_states, :selected => 'AZ'
-            = f.input :zip, :placeholder => '85281'
-
-          .form-actions.plain
-            = f.button :submit, 'Register'
+        = render 'form'
 
   .row
     .spacer-small

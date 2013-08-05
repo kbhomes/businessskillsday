@@ -18,17 +18,9 @@ module Admin
     end
 
     def create
-      password = SecureRandom.hex(10)
-      account_params = admin_account_params
-      account_params[:password] = account_params[:password_confirmation] = password
+      @admin_account = Account.create_and_setup(admin_account_params)
 
-      # Make sure the type parameter is valid.
-      raise 'Account type is not valid' unless Account.types.include?(account_params[:type])
-
-      @admin_account = (account_params[:type].constantize).new(account_params)
-
-      if @admin_account.save
-        AccountMailer.new_account(@admin_account, password).deliver
+      if @admin_account.valid?
         redirect_to admin_account_url(@admin_account), notice: 'Account was successfully created.'
       else
         render action: "new"

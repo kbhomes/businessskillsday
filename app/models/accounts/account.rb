@@ -48,6 +48,23 @@ class Account < ActiveRecord::Base
     "#{id} #{display_name}".parameterize
   end
 
+  def self.create_and_setup(params)
+    type = params.delete(:type)
+    password = SecureRandom.hex(10)
+    params[:password] = params[:password_confirmation] = password
+
+    # Make sure the type parameter is valid.
+    raise 'Account type is not valid' unless Account.types.include?(type)
+
+    account = (type.constantize).new(params)
+
+    if account.save
+      AccountMailer.new_account(account, password).deliver
+    end
+
+    account
+  end
+
   private
 
     def update_remember_token

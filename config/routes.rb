@@ -28,6 +28,7 @@ BusinessSkillsDay::Application.routes.draw do
     resources :advisers,  :except => [:new, :create, :show, :edit, :update]
     resources :students,  :except => [:new, :create, :show, :edit, :update]
     resources :teams,     :except => [:new, :create, :show, :edit, :update]
+
     resources :events do
       get :delete, :on => :member
 
@@ -35,7 +36,14 @@ BusinessSkillsDay::Application.routes.draw do
         get :delete, :on => :member
       end
     end
+
     resources :accounts do get :delete, :on => :member end
+
+    resources :registrations, :only => [:index, :show, :edit, :update, :destroy] do
+      get :delete, :on => :member
+      get :confirm, :on => :member
+      post :approve, :on => :member
+    end
 
     get '/results' => 'results#main', :as => 'results'
     get '/' => 'main#index'

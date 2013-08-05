@@ -10,6 +10,7 @@ module Admin
       @admin_events = Event.all
       @admin_results = Result.all
       @admin_accounts = Account.all
+      @admin_registrations = Registration.all
     end
   end
 end

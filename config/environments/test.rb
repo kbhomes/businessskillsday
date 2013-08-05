@@ -30,4 +30,10 @@ BusinessSkillsDay::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # --------------
+  # Mailer options
+  # --------------
+  config.action_mailer.default_url_options = { :host => ENV['DEVELOPMENT_MAIL_DEFAULT_URL'] }
+  ActionMailer::Base.default(:from => ENV['DEVELOPMENT_MAIL_FROM'])
 end

@@ -14,3 +14,6 @@
 
   - if can? :manage, Account
     = sidebar_link 'Accounts', admin_accounts_path, :controller => 'accounts'
+
+  - if can? :manage, Registration
+    = sidebar_link 'Registrations', admin_registrations_path, :controller => 'registrations'

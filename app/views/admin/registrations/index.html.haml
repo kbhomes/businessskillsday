@@ -1,0 +1,31 @@
+- title 'Registrations'
+
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+.row-fluid
+  .span12.section
+    %h1= icon_title_registration 'Pending registrations:'
+
+    - if can? :create, Registration
+      .row-fluid
+        .section.span12
+          %h4.title= icon_title 'cog', 'Actions:'
+          %div
+            = link_to_new Registration, new_registration_path
+
+    %div
+      %p.muted= icon_title_info "There are #{pluralize @registrations.count, 'pending registration'}."
+
+      %table.table
+        %th Chapter Name
+        %th Email
+        %th Contact Person
+        %th Created On
+        %th
+
+        - @registrations.each do |r|
+          = render :partial => 'admin/registrations/table_row', :locals => { :registration => r }

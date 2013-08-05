@@ -6,6 +6,7 @@ require 'minitest/reporters'
 MiniTest::Reporters.use!
 
 require 'capybara/rails'
+require 'mocha/setup'
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods

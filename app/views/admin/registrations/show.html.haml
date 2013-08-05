@@ -1,0 +1,66 @@
+- title "Registration for #{@registration.chapter}"
+
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+.row-fluid
+  .span12.section
+    %h1.title
+      = icon_title_registration "Registration for #{@registration.chapter}"
+
+    - if can?(:edit, @registration) # || can?(:delete, @registration)
+      .row-fluid
+        .span12.section
+          %h4.title= icon_title 'cog', 'Actions:'
+          %div
+            = link_to_edit @registration, edit_admin_registration_path(@registration)
+            = link_to_delete @registration, delete_admin_registration_path(@registration)
+
+    .row-fluid
+      .section.span12
+        %h4.title= icon_title_info 'Information:'
+
+        %div
+          %table.info-table
+            %tr
+              %td
+                %strong Chapter:
+              %td= @registration.chapter
+
+            %tr
+              %td
+                %strong Email:
+              %td= @registration.email
+
+            %tr
+              %td
+                %strong Contact Person:
+              %td= @registration.contact
+
+            %tr
+              %td
+                %strong Address:
+              %td= @registration.address
+
+            %tr
+              %td
+                %strong City:
+              %td= @registration.city
+
+            %tr
+              %td
+                %strong State:
+              %td= @registration.state
+
+            %tr
+              %td
+                %strong Zip:
+              %td= @registration.zip
+
+            %tr
+              %td
+                %strong Created On:
+              %td= @registration.created_at.to_s(:human_month_day_year)

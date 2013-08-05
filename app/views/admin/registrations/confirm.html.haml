@@ -1,0 +1,24 @@
+- title "Approving registration for #{@registration.chapter}"
+
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+%h1= icon_title_registration "Approving registration for #{@registration.chapter}"
+
+.row-fluid
+  .section.span12
+    %h4.title= icon_title_question 'Confirmation:'
+
+    %div
+      %p Approving this registration will trigger the following actions:
+      %ul
+        %li Create a new <strong>#{@registration.chapter}</strong> chapter
+        %li Create a new <strong>#{@registration.email}</strong> chapter account and send account details to <strong>#{@registration.contact}</strong>
+        %li Delete this registration
+
+    %div
+      = link_to icon_title_registration('Approve'), approve_admin_registration_path(@registration), :method => :post, :class => 'btn btn-small btn-success'
+      = link_to icon_title('arrow-left', 'Cancel'), :back, :class => 'btn btn-small'

@@ -31,6 +31,7 @@ group :test do
   gem 'minitest-reporters', '>= 0.5.0'
   gem 'ruby-prof'
   gem 'capybara'
+  gem 'mocha', :require => false
 end
 
 group :development do

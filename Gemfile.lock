@@ -63,6 +63,7 @@ GEM
     dotenv-rails (0.8.0)
       dotenv (= 0.8.0)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -99,6 +100,7 @@ GEM
       callsite
       rack-contrib
       railties
+    metaclass (0.0.1)
     mime-types (1.23)
     mini_portile (0.5.1)
     minitest (4.7.5)
@@ -107,7 +109,11 @@ GEM
       builder
       minitest (>= 2.12, < 5.0)
       powerbar
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.7.7)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     nokogiri (1.6.0-x86-mingw32)
       mini_portile (~> 0.5.0)
     pg (0.16.0-x86-mingw32)
@@ -210,6 +216,7 @@ DEPENDENCIES
   meta_request
   minitest
   minitest-reporters (>= 0.5.0)
+  mocha
   pg
   quiet_assets
   rails (= 4.0.0)

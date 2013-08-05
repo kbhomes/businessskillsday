@@ -1,0 +1,18 @@
+= simple_form_for [:admin, @registration], :html => { :class => 'form form-horizontal' } do |f|
+
+  = f.error_notification
+
+  .form-inputs
+    = f.input :chapter, :label => 'Chapter Name', :placeholder => 'Sunnyside'
+    = f.input :email, :hint => 'This email will be used to login', :placeholder => 'mjones@sunnyside.edu'
+    = f.input :contact, :label => 'Contact Person', :hint => "Contact's full name", :placeholder => 'Mike Jones'
+
+    %hr
+
+    = f.input :address, :placeholder => '1120 Sunnyside Drive'
+    = f.input :city, :placeholder => 'Tempe'
+    = f.input :state, :collection => us_states, :selected => 'AZ'
+    = f.input :zip, :placeholder => '85281'
+
+  .form-actions.plain
+    = f.button :submit, 'Save Registration'

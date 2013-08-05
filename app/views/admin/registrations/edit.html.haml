@@ -1,0 +1,12 @@
+- title "Editing registration for #{@registration.chapter}"
+
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+.row-fluid
+  .span12
+    %h1= icon_title_edit "Editing registration for #{@registration.chapter}"
+
+.row-fluid
+  .span12
+    = render :partial => 'form'

@@ -86,7 +86,7 @@ class AdminAbilityTest < ActiveSupport::TestCase
     assert @ability.can?(:destroy, admin_account), 'Admin account could not destroy other admin account'
   end
 
-  test 'admin account can manage/create/edit/destroy registrations' do
+  test 'admin account can manage/create/edit/destroy/approve registrations' do
     registration = create :registration
 
     assert @ability.can?(:manage, Registration), 'Admin account could not manage registration'
@@ -94,5 +94,6 @@ class AdminAbilityTest < ActiveSupport::TestCase
     assert @ability.can?(:read, registration), 'Admin account could not read registration'
     assert @ability.can?(:update, registration), 'Admin account could not update registration'
     assert @ability.can?(:destroy, registration), 'Admin account could not destroy registration'
+    assert @ability.can?(:approve, registration), 'Admin account could not approve registration'
   end
 end
