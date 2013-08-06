@@ -1,0 +1,43 @@
+@import '../asu_colors.css.scss';
+
+#dashboard {
+  .item {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    float: left;
+    background-color: #f6f6f6;
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #333;
+
+    .inner {
+      height: 80px;
+      margin: 25px 0;
+    }
+
+    .icon i {
+      display: block;
+      font-size: 50px;
+      text-align: center;
+      width: auto;
+    }
+
+    .title {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 5px 0;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background-color: #f4f4f8;
+      color: $asu-maroon;
+      text-decoration: none;
+    }
+  }
+}

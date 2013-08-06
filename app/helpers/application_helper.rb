@@ -37,7 +37,7 @@ module ApplicationHelper
     "<li #{active_class}>#{link}</li>".html_safe
   end
 
-  def icon_title(icon, title)
+  def icon_title(icon, title = '')
     "<i class='icon-#{icon}'></i> #{title}".html_safe
   end
 
@@ -53,47 +53,47 @@ module ApplicationHelper
     icon_title 'remove', title
   end
 
-  def icon_title_info(title)
+  def icon_title_info(title = '')
     icon_title 'info', title
   end
 
-  def icon_title_question(title)
+  def icon_title_question(title = '')
     icon_title 'question', title
   end
 
-  def icon_title_exclamation(title)
+  def icon_title_exclamation(title = '')
     icon_title 'exclamation', title
   end
 
-  def icon_title_student(title)
+  def icon_title_student(title = '')
     icon_title 'user', title
   end
 
-  def icon_title_team(title)
+  def icon_title_team(title = '')
     icon_title 'group', title
   end
 
-  def icon_title_adviser(title)
+  def icon_title_adviser(title = '')
     icon_title 'legal', title
   end
 
-  def icon_title_chapter(title)
+  def icon_title_chapter(title = '')
     icon_title 'flag', title
   end
 
-  def icon_title_event(title)
+  def icon_title_event(title = '')
     icon_title 'calendar', title
   end
 
-  def icon_title_account(title)
+  def icon_title_account(title = '')
     icon_title 'cog', title
   end
 
-  def icon_title_result(title)
+  def icon_title_result(title = '')
     icon_title 'trophy', title
   end
 
-  def icon_title_registration(title)
+  def icon_title_registration(title = '')
     icon_title 'rocket', title
   end
 

@@ -19,30 +19,51 @@
 
 .row-fluid
   .span12.section
-    %h4.title= icon_title 'info-sign', 'Statistics:'
+    #dashboard
+      - if can? :read, Chapter
+        = link_to admin_chapters_path, :class => 'item' do
+          .inner
+            .icon= icon_title_chapter
+            .title #{pluralize(@admin_chapters.count, 'chapter')}
 
-    %div
-      %p
-        = icon_title_chapter "There are #{pluralize(@admin_chapters.count, 'chapter')}."
-        = link_to 'View all chapters.', admin_chapters_path
-      %p
-        = icon_title_adviser "There are #{pluralize(@admin_advisers.count, 'adviser')}."
-        = link_to 'View all advisers.', admin_advisers_path
-      %p
-        = icon_title_student "There are #{pluralize(@admin_students.count, 'student')}."
-        = link_to 'View all students.', admin_students_path
-      %p
-        = icon_title_team    "There are #{pluralize(@admin_teams.count,    'team')}."
-        = link_to 'View all teams.', admin_teams_path
-      %p
-        = icon_title_event   "There are #{pluralize(@admin_events.count,   'event')}."
-        = link_to 'View all events.', admin_events_path
-      %p
-        = icon_title_result  "There are #{pluralize(@admin_results.count,  'result')}."
-        = link_to 'View all results.', admin_results_path
-      %p
-        = icon_title_account "There are #{pluralize(@admin_accounts.count, 'account')}."
-        = link_to 'View all accounts.', admin_accounts_path
-      %p
-        = icon_title_registration "There are #{pluralize(@admin_registrations.count, 'pending registration')}."
-        = link_to 'View all registrations.', admin_registrations_path
+      - if can? :read, Adviser
+        = link_to admin_advisers_path, :class => 'item' do
+          .inner
+            .icon= icon_title_adviser
+            .title #{pluralize(@admin_advisers.count, 'adviser')}
+
+      - if can? :read, Student
+        = link_to admin_students_path, :class => 'item' do
+          .inner
+            .icon= icon_title_student
+            .title #{pluralize(@admin_students.count, 'student')}
+
+      - if can? :read, Team
+        = link_to admin_teams_path, :class => 'item' do
+          .inner
+            .icon= icon_title_team
+            .title #{pluralize(@admin_teams.count, 'team')}
+
+      - if can? :read, Event
+        = link_to admin_events_path, :class => 'item' do
+          .inner
+            .icon= icon_title_event
+            .title #{pluralize(@admin_events.count, 'event')}
+
+      - if can? :read, Result
+        = link_to admin_results_path, :class => 'item' do
+          .inner
+            .icon= icon_title_result
+            .title #{pluralize(@admin_results.count, 'result')}
+
+      - if can? :read, Registration
+        = link_to admin_accounts_path, :class => 'item' do
+          .inner
+            .icon= icon_title_account
+            .title #{pluralize(@admin_accounts.count, 'account')}
+
+      - if can? :read, Registration
+        = link_to admin_registrations_path, :class => 'item' do
+          .inner
+            .icon= icon_title_registration
+            .title #{pluralize(@admin_registrations.count, 'registration')}

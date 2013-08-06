@@ -15,8 +15,9 @@
 @import "fonts.css.scss";
 @import "form.css.scss";
 
-@import "admin.css.scss";
 @import "splash.css.scss";
+@import "admin/admin.css.scss";
+@import "admin/dashboard.css.scss";
 
 #header {
   background-color: black;
