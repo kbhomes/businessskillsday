@@ -38,3 +38,8 @@
               %th Score
             - @team_results.each do |r|
               = render :partial => 'results/table_row', :locals => { :result => r, :columns => [:rank, :event, :participant, :score] }
+
+    - if @student_results.count + @team_results.count == 0
+      %div.alert.alert-error
+        %i.icon-exclamation
+        You have no results.
