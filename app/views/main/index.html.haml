@@ -11,6 +11,11 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
+    :coffee
+      $(() ->
+        $("#main-navigation a").smoothScroll()
+      )
+
   %body
     #header
       #session-header
@@ -22,7 +27,15 @@
           .span12
             = image_tag 'bsd/fde_gold.png'
 
-    #details
+    #main-navigation
+      = link_to 'About', '#about'
+      = link_to 'Schedule', '#schedule'
+      = link_to 'Parking', '#parking'
+      = link_to 'Registration', '#registration'
+      = link_to 'Partners', '#partners'
+      = link_to 'Contact', '#contact'
+
+    #details.main-section.grey
       .container
         .row
           #where.information.span6
@@ -46,7 +59,71 @@
 
             %span.title December 6, 2013
 
-    #advisers
+    #about.main-section
+      .container
+        .row
+          .information.span12
+            %i.icon-info-sign
+            %span.title About
+
+        .row
+          #about-bsd.span5.offset1
+            .information
+              %span.subtitle Business Skills Day:
+
+            .media
+              .media-body
+                ASU Business Skills Day is a conference that is organized by ASU Phi Beta Lambda.
+                The conference allows high school students to progress as leaders by participating
+                in business related workshops, team-building activities, and over 25 different
+                business and technology related competitions.
+
+            .media
+              .pull-left
+                .media-object
+
+              .media-body
+                It is an event that combines educational excellence, leadership, and ASU's spirit of community building. ASU
+                Business Skills Day provides the perfect chance for Future Business Leaders of
+                America students from all around Arizona to prepare for competition, both academic
+                as well as in the business world.
+
+            .media
+              .media-body
+                ASU Business Skills Day has taken place at ASU's
+                main campus for the past 24 years and is completely organized and run by college
+                students from ASU's Phi Beta Lambda Chapter.
+
+          #about-pbl.span5
+            .information
+              %span.subtitle Phi Beta Lambda:
+
+            .media
+              .media-body
+                ASU Phi Beta Lambda is the collegiate version of Future Business Leaders of America, the
+                largest student business organization in the world. Besides organizing Business Skills Day,
+                the members of the organization participate in all sorts of activities throughout the year,
+                including raising money for charities like the March of Dimes.
+
+            .media
+              .media-body
+                You can find out more information about ASU Phi Beta Lambda by going to its website, asupbl.org.
+
+    #schedule.main-section.grey
+      .container
+        .row
+          .information.span12
+            %i.icon-calendar
+            %span.title Schedule
+
+    #parking.main-section
+      .container
+        .row
+          .information.span12
+            %i.icon-truck
+            %span.title Parking
+
+    #registration.main-section.grey
       .container
         .row
           .span12
@@ -58,6 +135,20 @@
             .well.text-center.copy-large
               %p= link_to icon_title_new('Register your chapter.'), new_registration_url
               %p= icon_title 'time', 'Registration will close on <strong>November 2013</strong>.'
+
+    #partners.main-section
+      .container
+        .row
+          .information.span12
+            %i.icon-heart
+            %span.title Partners
+
+    #contact.main-section.grey
+      .container
+        .row
+          .information.span12
+            %i.icon-comment
+            %span.title Contact
 
     #footer
       .container
