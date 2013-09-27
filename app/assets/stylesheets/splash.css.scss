@@ -80,10 +80,21 @@
   }
 }
 
-#advisers {
+#registration {
+  .well {
+    background-color: white;
+  }
   .alert {
     padding: 20px;
     font-size: 16px;
     text-align: center;
+  }
+}
+
+#partners {
+  .span3 {
+    height: 100px;
+    padding: 20px 0;
+    line-height: 100px;
   }
 }
