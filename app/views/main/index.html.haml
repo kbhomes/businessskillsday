@@ -28,9 +28,18 @@
             = image_tag 'bsd/fde_gold.png'
 
     #main-navigation
-      = link_to 'About', '#about'
+      .dropdown
+        = link_to 'About', '#about'
+        %ul.dropdown-menu
+          %li
+            = link_to 'Business Skills Day', '#about-bsd'
+            = link_to 'Phi Beta Lambda', '#about-pbl'
+            = link_to 'Conference Fees', '#about-fees'
+            = link_to 'Dress Code', '#about-dress'
+            = link_to 'Events & Rules', '#about-rules'
+
       = link_to 'Schedule', '#schedule'
-      = link_to 'Parking', '#parking'
+      = link_to 'Directions & Parking', '#parking'
       = link_to 'Registration', '#registration'
       = link_to 'Partners', '#partners'
       = link_to 'Contact', '#contact'
@@ -79,9 +88,6 @@
                 business and technology related competitions.
 
             .media
-              .pull-left
-                .media-object
-
               .media-body
                 It is an event that combines educational excellence, leadership, and ASU's spirit of community building. ASU
                 Business Skills Day provides the perfect chance for Future Business Leaders of
@@ -109,6 +115,109 @@
               .media-body
                 You can find out more information about ASU Phi Beta Lambda by going to its website, asupbl.org.
 
+        .row
+          #about-fees.span8.offset2
+            .information
+              %span.subtitle Conference Fees:
+              %small (includes lunch)
+
+            .media
+              .media-body
+                %p <strong>Normal Registration</strong> until November 21, 2013 for $30 per student.
+                %p <strong>Late Registration</strong> from Nov. 22, 2013 to Dec. 2, 2013 for $40 per student. Note that performance events are not guaranteed during this time.
+
+            .media
+              .media-body
+                %p We cannot accept PO’s. Refunds and changes cannot be made after December 31, 2013.
+
+        .row
+          #about-dress.span8.offset2
+            .information
+              %span.subtitle Dress Code:
+
+            .media
+              .media-body
+                :markdown
+                  Professional FBLA-PBL dress code is **required for the entire conference**.
+                  Please see the last page for more information.
+
+        .row
+          #about-rules.span8.offset2
+            .information
+              %span.subtitle Events & Rules:
+
+            .media
+              .media-body
+                %ul
+                  %li Each student may only compete in three (3) events total, including no more than two (2) written tests and no more than one (1) performance event
+                  %li Schools with attendees ranging from 1-24 may only register (2) students for each Individual Performance Event
+                  %li Schools with attendees ranging from 24-49 may only register (3) students for each Individual Performance Event
+                  %li Schools with 50 or more attendees may only register (4) students for each Individual Performance Event
+                  %li Schools may only register one (1) team for each Team Performance Event (i.e., Entrepreneurship, Management Analysis, Jeopardy, and Business Graphics).
+
+        .row
+          #about-events.span8.offset2
+            %table.table.table-hover
+              %tr
+                %th.events-written Written Objective Tests
+                %th.events-performance Performance Events
+
+              %tr
+                %td 101 - Accounting I
+                %td 302 - Impromptu Speaking
+              %tr
+                %td 102 - Accounting II
+                %td 303 - Job Interview
+              %tr
+                %td 103 - Business Calculations
+                %td 304 - Help Desk
+              %tr
+                %td 104 - Business Communication
+                %td 305 - Future Business Leader (Written test & Interview)
+              %tr
+                %td 105 - Business Law
+                %td 401 - Business Graphics (Team)
+              %tr
+                %td 106 - Business Math
+                %td 402 - Business Jeopardy (Team)
+              %tr
+                %td 107 - Business Procedures
+                %td 403 – Management Decision Making (Team Written Exam AND Team Performance)
+              %tr
+                %td 108 - Cyber Security
+                %td 404 - Entrepreneurship  (Team Written Exam AND Team Performance)
+              %tr
+                %td 109 - Economics
+                %td
+              %tr
+                %td 110 - FBLA Principles and Procedures
+                %td
+              %tr
+                %td 111 - Introduction to Business
+                %td
+              %tr
+                %td 112 - Introduction to Business Communication
+                %td
+              %tr
+                %td 113 – Introduction to Technology Concepts
+                %td
+              %tr
+                %td 114 - Marketing
+                %td
+              %tr
+                %td 115 - Networking Concepts
+                %td
+              %tr
+                %td 116 - Parliamentary Procedures (Written Test Only)
+                %td
+              %tr
+                %td 117 – Sports Management
+                %td
+              %tr
+                %td 118 – Technology Concepts
+                %td
+
+
     #schedule.main-section.grey
       .container
         .row
@@ -116,12 +225,84 @@
             %i.icon-calendar
             %span.title Schedule
 
+        .row
+          .span6.offset3
+            .notice Schedule is tentative and subject to change.
+
+            %table.table.table-hover
+              %tr
+                %td.schedule-event Registration
+                %td.schedule-time 8:00-8:30
+                
+              %tr
+                %td.schedule-event Opening Session
+                %td.schedule-time 8:30-9:00
+
+              %tr
+                %td.schedule-event Individual Performance
+                %td.schedule-time 9:15-12:00
+
+              %tr
+                %td.schedule-event Written Testing Session I
+                %td.schedule-time 9:15-10:15
+
+              %tr
+                %td.schedule-event Written Testing Session II
+                %td.schedule-time 10:30-11:30
+
+              %tr
+                %td.schedule-event Written Testing Session III
+                %td.schedule-time 11:45-12:45
+
+              %tr
+                %td.schedule-event Team Performance & Individual Perform. Finals
+                %td.schedule-time 1:00-3:00
+
+              %tr
+                %td.schedule-event Workshop Session I
+                %td.schedule-time 1:00-1:45
+
+              %tr
+                %td.schedule-event Workshop Session II
+                %td.schedule-time 2:00-2:45
+
+              %tr
+                %td.schedule-event Closing session/Raffle
+                %td.schedule-time 3:00-3:15
+
+              %tr
+                %td.schedule-event Keynote Speaker
+                %td.schedule-time 3:00-4:00
+
+              %tr
+                %td.schedule-event Award Ceremony
+                %td.schedule-time 4:00-5:00
+
+
     #parking.main-section
       .container
         .row
           .information.span12
             %i.icon-truck
-            %span.title Parking
+            %span.title Directions & Parking
+
+        .row
+          .span5.offset1
+            :markdown
+              The Arizona State University Memorial Union is located between *Mill Avenue* and *Rural Road* on *Apache Blvd* in Tempe.
+              The competitions, opening, and closing sessions will be held in the Memorial Union.
+
+              ASU Parking is located on the north side of Apache Blvd in the Apache Parking Structure. Personal vehicle parking is available in this lot for
+              $10 for the entire day.  If buses need to be parked during the day of the conference there is available parking for buses.
+              If you are going to require vehicle or bus parking you need to first confirm with Ben Glines or parking may not be granted.
+
+              For directions to **ASU Tempe** campus or to the **Memorial Union** please visit:
+              #{link_to 'http://www.asu.edu/map/interactive/', 'http://www.asu.edu/map/interactive/'}
+
+          .span5
+            = link_to 'http://www.asu.edu/map/interactive/' do
+              = image_tag 'map.png', :class => 'asu-map'
+
 
     #registration.main-section.grey
       .container
@@ -131,10 +312,12 @@
               %i.icon-plus
               .title Registration
         .row
-          .span4.offset4
+          .span8.offset2
             .well.text-center.copy-large
               %p= link_to icon_title_new('Register your chapter.'), new_registration_url
-              %p= icon_title 'time', 'Registration will close on <strong>November 2013</strong>.'
+              %br
+              %p Normal registration is open until <strong>November 21</strong>.
+              %p Late registration will be open from <strong>November 22</strong> to <strong>December 2</strong>.
 
     #partners.main-section
       .container
@@ -145,16 +328,20 @@
 
         .row
           .span3
-            %img{ :src => 'https://origin.ih.constantcontact.com/fs074/1104038875541/img/31.jpg' }
+            = link_to 'http://www.fbla-pbl.org/' do
+              %img{ :src => 'https://origin.ih.constantcontact.com/fs074/1104038875541/img/31.jpg' }
 
           .span3
-            %img{ :src => 'https://www.asu.edu/asuthemes/4.0/images/logos/ASUWPC_4CP_nobar.png' }
+            = link_to 'http://wpcarey.asu.edu/' do
+              %img{ :src => 'https://www.asu.edu/asuthemes/4.0/images/logos/ASUWPC_4CP_nobar.png' }
 
           .span3
-            %img{ :src => 'http://www.asucssi.com/uploads/1/0/5/4/10546895/7911188_orig.png' }
+            = link_to 'http://www.asucssi.com/' do
+              %img{ :src => 'http://www.asucssi.com/uploads/1/0/5/4/10546895/7911188_orig.png' }
 
           .span3
-            %img{ :src => 'http://www.lavaasu.com/uploads/1/0/7/6/10766174/1368694697.png' }
+            = link_to 'http://www.lavaasu.com/' do
+              %img{ :src => 'http://www.lavaasu.com/uploads/1/0/7/6/10766174/1368694697.png' }
 
     #contact.main-section.grey
       .container
@@ -162,6 +349,11 @@
           .information.span12
             %i.icon-comment
             %span.title Contact
+
+        .row
+          .span6.offset3.text-center
+            %p Contact <strong>Ben Glines</strong>, the Director of Business Skills Day, at <a href="mailto:bsd@asupbl.org">bsd@asupbl.org</a>.
+
 
     #footer
       .container

@@ -31,6 +31,47 @@
       box-shadow: inset #FFB310 0px -6px;
     }
   }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      background: #222;
+      text-align: left;
+
+      a {
+        text-transform: none;
+        font-weight: normal;
+        display: block;
+        padding: 5px 15px;
+
+        &:hover {
+          box-shadow: none;
+          background-image: none;
+        }
+      }
+    }
+
+    &:hover {
+      & > a {
+        text-decoration: none;
+        box-shadow: inset #FFB310 0px -6px;
+      }
+
+      .dropdown-menu {
+        display: block;
+      }
+    }
+  }
 }
 
 .information {
@@ -48,6 +89,13 @@
     font-size: 30px;
     line-height: 40px;
     text-transform: uppercase;
+  }
+
+  small {
+    display: block;
+    text-transform: uppercase;
+    color: #888;
+    text-align: center;
   }
 
   .description {
@@ -80,6 +128,43 @@
   }
 }
 
+#about {
+  padding-bottom: 0;
+
+  .row {
+    margin-bottom: 20px;
+  }
+
+  #about-events {
+    table.table.table-hover {
+      width: 100%;
+
+      th.events-written {
+        width: 50%;
+      }
+
+      th.events-performance {
+        width: 50%;
+      }
+
+      tr:hover > td {
+        color: $asu-maroon;
+        background-color: white;
+      }
+    }
+  }
+}
+
+#parking {
+  .information {
+    padding-bottom: 20px;
+  }
+
+  .asu-map {
+    border: 1px solid #888;
+  }
+}
+
 #registration {
   .well {
     background-color: white;
@@ -96,5 +181,37 @@
     height: 100px;
     padding: 20px 0;
     line-height: 100px;
+  }
+}
+
+#schedule {
+  .notice {
+    text-align: center;
+    font-style: italic;
+    padding: 10px 0;
+  }
+
+  table.table.table-hover {
+    width: 100%;
+
+    td.schedule-event {
+      text-align: left;
+      font-weight: bold;
+
+      &:after {
+        content: ':';
+      }
+    }
+
+    tr:hover > td {
+      color: $asu-maroon;
+      background-color: white;
+    }
+  }
+}
+
+#contact {
+  .information {
+    padding-bottom: 20px;
   }
 }
