@@ -207,7 +207,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
-  font-awesome-rails
+  font-awesome-rails (= 3.2.1.2)
   haml-rails
   jquery-rails
   jquery-turbolinks
