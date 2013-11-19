@@ -39,7 +39,11 @@
               %tr
                 %td
                   %strong Chapter:
-                %td= link_to icon_title_chapter(@admin_account.chapter.name), chapter_path(@admin_account.chapter)
+                %td
+                  - if @admin_account.chapter.present?
+                    = link_to icon_title_chapter(@admin_account.chapter.name), chapter_path(@admin_account.chapter)
+                  - else
+                    = icon_title_delete 'No associated chapter'
             %tr
               %td
                 %strong Created On:

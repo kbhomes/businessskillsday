@@ -4,6 +4,10 @@ class ChapterAccount < Account
   validates :chapter, :presence => true
 
   def display_name
-    chapter.name
+    if chapter.present?
+      chapter.name
+    else
+      email
+    end
   end
 end

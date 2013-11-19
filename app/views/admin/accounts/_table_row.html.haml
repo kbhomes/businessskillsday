@@ -9,7 +9,10 @@
 
   - if account.is_a? ChapterAccount
     %td.account-email= link_to account.email, admin_account_path(account)
-    %td.account-chapter= link_to account.chapter.name, chapter_path(account.chapter)
+    - if account.chapter.present?
+      %td.account-chapter= link_to account.chapter.name, chapter_path(account.chapter)
+    - else
+      %td.account-chapter.error= icon_title_delete 'No associated chapter'
     %td.account-created= account.created_at.to_s(:human_month_day_year)
 
   %td
