@@ -31,10 +31,13 @@ module Admin
       account_params = admin_account_params
       success = true
 
-      current_password = account_params.delete(:current_password)
-      if account_params[:password].present? || account_params[:password_confirmation].present?
-        success = @admin_account.authenticate(current_password)
-        @admin_account.errors.add(:current_password, 'is incorrect') unless success
+      # Admins don't need the user's current password to force a new one
+      unless current_ability.can? :update, :passwords
+        current_password = account_params.delete(:current_password)
+        if account_params[:password].present? || account_params[:password_confirmation].present?
+          success = @admin_account.authenticate(current_password)
+          @admin_account.errors.add(:current_password, 'is incorrect') unless success
+        end
       end
 
       if success && @admin_account.update_attributes(account_params)

@@ -44,5 +44,8 @@ class Ability
 
     def admin_account_abilities(account)
       can :manage, :all
+
+      # Explicit permissions for reference.
+      can :update, :passwords
     end
 end
