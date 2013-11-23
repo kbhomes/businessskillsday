@@ -4,7 +4,7 @@
       %i.icon-warning-sign
       Late registration has begun and will continue until <b>December 2</b>.
 
-- else if Time.zone.parse(ENV['BSD_REGISTRATION_END']) <= Time.zone.now
+- elsif Time.zone.parse(ENV['BSD_REGISTRATION_END']) <= Time.zone.now
   - content_for :before_page do
     #registration_end
       %i.icon-warning-sign
