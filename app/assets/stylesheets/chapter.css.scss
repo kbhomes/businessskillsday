@@ -1,0 +1,15 @@
+@import "asu_colors.css.scss";
+
+#late_registration {
+  text-align: center;
+  line-height: 30px;
+  background: $asu-gold;
+  color: black;
+}
+
+#registration_end {
+  text-align: center;
+  line-height: 30px;
+  background: $asu-maroon;
+  color: white;
+}

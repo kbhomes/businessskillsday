@@ -1,5 +1,7 @@
 class ChapterAuthenticationController < ApplicationController
 
+  layout 'chapter'
+
   before_filter :get_chapter
 
   private

@@ -1,0 +1,13 @@
+- if Time.zone.parse(ENV['BSD_LATE_REGISTRATION_START']) <= Time.zone.now
+  - content_for :before_page do
+    #late_registration
+      %i.icon-warning-sign
+      Late registration has begun and will continue until <b>December 2</b>.
+
+- else if Time.zone.parse(ENV['BSD_REGISTRATION_END']) <= Time.zone.now
+  - content_for :before_page do
+    #registration_end
+      %i.icon-warning-sign
+      Registration has ended; your information is read-only.
+
+= render :template => 'layouts/application'
