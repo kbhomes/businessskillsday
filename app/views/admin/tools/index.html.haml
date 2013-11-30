@@ -1,0 +1,19 @@
+- title 'Tools'
+
+- content_for :sidebar do
+  = render :partial => 'admin/sidebar'
+
+- if notice.present?
+  %p#notice.alert.alert-success= notice
+
+.row-fluid
+  .span12.section
+    %h1= icon_title 'wrench', 'Tools'
+
+.row-fluid
+  .span12.section
+    %p The following tools are available to use:
+
+    %dl.dl-horizontal
+      %dt= link_to 'Nametags:', admin_nametags_path
+      %dd Generate printable nametags for each student.

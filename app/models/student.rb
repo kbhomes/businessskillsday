@@ -85,4 +85,8 @@ class Student < ActiveRecord::Base
     "#{id} #{name}".parameterize
   end
 
+  def to_unique_number
+    "#{chapter.id.to_s.rjust(3, '0')}-#{id.to_s.rjust(4, '0')}"
+  end
+
 end

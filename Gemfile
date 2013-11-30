@@ -22,6 +22,7 @@ gem 'font-awesome-rails', '3.2.1.2'
 gem 'redcarpet'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'will_paginate', '~> 3.0'
+gem 'prawn'
 
 group :test do
   #if RUBY_PLATFORM =~ /(win32|w32)/

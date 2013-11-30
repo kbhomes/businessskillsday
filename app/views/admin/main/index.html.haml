@@ -67,3 +67,8 @@
           .inner
             .icon= icon_title_registration
             .title #{pluralize(@admin_registrations.count, 'registration')}
+
+      = link_to admin_tools_path, :class => 'item' do
+        .inner
+          .icon= icon_title 'wrench', ''
+          .title Tools

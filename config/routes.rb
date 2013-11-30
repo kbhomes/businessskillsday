@@ -45,6 +45,12 @@ BusinessSkillsDay::Application.routes.draw do
       post :approve, :on => :member
     end
 
+    # Tools like nametags, powerpoints, etc.
+    scope :tools do
+      get '/' => 'tools#index', :as => 'tools'
+      get 'nametags' => 'tools#nametags'
+    end
+
     get '/results' => 'results#main', :as => 'results'
     get '/' => 'main#index'
   end
