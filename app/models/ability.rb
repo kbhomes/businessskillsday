@@ -22,11 +22,20 @@ class Ability
     def chapter_account_abilities(account)
       chapter = account.chapter
 
-      can [:read, :update, :results], Chapter, :id => chapter.id
+      if Time.zone.parse(ENV['BSD_REGISTRATION_END']) <= Time.zone.now
+        # After registration, this is read-only.
+        can [:read, :results], Chapter, :id => chapter.id
+        can :read, Adviser, :chapter_id => chapter.id
+        can :read, Student, :chapter_id => chapter.id
+        can :read, Team, :chapter_id => chapter.id
+      else
+        # Otherwise, let them manage their chapter.
+        can [:read, :update, :results], Chapter, :id => chapter.id
+        can :manage, Adviser, :chapter_id => chapter.id
+        can :manage, Student, :chapter_id => chapter.id
+        can :manage, Team, :chapter_id => chapter.id
+      end
 
-      can :manage, Adviser, :chapter_id => chapter.id
-      can :manage, Student, :chapter_id => chapter.id
-      can :manage, Team, :chapter_id => chapter.id
       can [:read, :update], Account, :id => account.id
     end
 
