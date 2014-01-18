@@ -15,7 +15,7 @@ Sits atop Ruby on Rails 4 and PostgreSQL.
 Requirements
 ------------
 
-* Ruby (2.0 or greater)
+* Ruby (2.1.0 or greater)
 * PostgreSQL (9.0 or greater)
 
 
@@ -60,7 +60,7 @@ License
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Sajid Anwar
+Copyright (c) 2013-2014 Sajid Anwar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
