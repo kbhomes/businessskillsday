@@ -21,6 +21,10 @@ pickle-email-*.html
 .project
 /config/database.yml
 
+### RVM ###
+.ruby-version
+.ruby-gemset
+
 ### RubyMine ###
 .idea/
 
