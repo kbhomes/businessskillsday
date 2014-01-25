@@ -25,8 +25,9 @@ pickle-email-*.html
 .ruby-version
 .ruby-gemset
 
-### RubyMine ###
+### JetBrains ###
 .idea/
+*.iml
 
 ### dotenv ###
 .env
